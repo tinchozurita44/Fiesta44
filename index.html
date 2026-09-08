@@ -1,646 +1,626 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🎉 Tincho Zurita | 44 Años</title>
+<title>Tincho Zurita | 44 Años</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    background:#080808;
-    color:white;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
-.container{
-    max-width:600px;
-    margin:auto;
-    min-height:100vh;
-    text-align:center;
-    position:relative;
-}
 
-/* FONDO ANIMADO */
+/* =========================
+   FONDO ANIMADO
+========================= */
 
-body::before{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:radial-gradient(circle, rgba(218,174,45,.18), transparent 70%);
-    top:-150px;
-    left:-150px;
-    animation:mover 8s infinite alternate;
-}
+.glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
 
-@keyframes mover{
-    from{
-        transform:translate(0,0);
-    }
-    to{
-        transform:translate(200px,300px);
-    }
-}
-
-/* SECCIONES */
-
-section{
-    padding:55px 25px;
-    position:relative;
-    z-index:2;
-}
-
-/* INTRO */
-
-.intro{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-}
-
-.frase{
-    color:#d8cba7;
-    font-size:20px;
-    letter-spacing:5px;
-    line-height:1.7;
-    margin-bottom:35px;
-    animation:aparecer 2s ease;
-}
-
-.nombre{
-    font-size:65px;
-    font-weight:bold;
-    color:#e0b83e;
-    text-shadow:
-    0 0 10px #e0b83e,
-    0 0 30px rgba(224,184,62,.6);
-    animation:zoom 2s ease;
-}
-
-.cumple{
-    font-size:26px;
-    letter-spacing:12px;
-    margin-top:30px;
-    color:#ddd;
-}
-
-.numero{
-    font-size:150px;
-    font-weight:bold;
-    color:#e0b83e;
-    line-height:1;
-    text-shadow:
-    0 0 15px #e0b83e,
-    0 0 45px rgba(224,184,62,.7);
-    animation:brillo 2s infinite alternate;
-}
-
-.anos{
-    font-size:50px;
-    color:#e0b83e;
-    font-style:italic;
-}
-
-.linea{
-    width:180px;
-    height:3px;
-    background:#d8b64c;
-    margin:45px auto;
-}
-
-.mensaje{
-    font-size:26px;
-    line-height:1.5;
-    color:#eee;
-}
-
-.mensaje strong{
-    color:#e0b83e;
-}
-
-/* TARJETAS */
-
-.card{
-    background:linear-gradient(
-        145deg,
-        #181818,
-        #0c0c0c
+    background: radial-gradient(
+        circle,
+        rgba(210, 170, 50, 0.25),
+        rgba(210, 170, 50, 0.08),
+        transparent 70%
     );
-    border:1px solid #3d3214;
-    border-radius:25px;
-    padding:30px;
-    margin:25px 0;
-    box-shadow:0 0 30px rgba(224,184,62,.08);
+
+    border-radius: 50%;
+
+    top: 20%;
+    left: -200px;
+
+    z-index: 0;
+
+    animation: moverGlow 10s infinite alternate ease-in-out;
+
+    pointer-events: none;
 }
 
-.titulo{
-    font-size:32px;
-    color:#e0b83e;
-    margin-bottom:30px;
-}
+@keyframes moverGlow {
 
-.info{
-    font-size:22px;
-    line-height:1.8;
-}
-
-.info strong{
-    color:#e0b83e;
-}
-
-/* CUENTA REGRESIVA */
-
-.countdown{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-top:25px;
-}
-
-.time{
-    background:#111;
-    border:1px solid #d4ad43;
-    border-radius:15px;
-    padding:15px 10px;
-    min-width:70px;
-}
-
-.time span{
-    display:block;
-    font-size:28px;
-    font-weight:bold;
-    color:#e0b83e;
-}
-
-.time small{
-    color:#aaa;
-}
-
-/* BOTON */
-
-.boton{
-    display:inline-block;
-    margin-top:25px;
-    padding:18px 28px;
-    background:#d9b23d;
-    color:#111;
-    text-decoration:none;
-    border-radius:50px;
-    font-size:20px;
-    font-weight:bold;
-    transition:.3s;
-    box-shadow:0 0 20px rgba(224,184,62,.4);
-}
-
-.boton:hover{
-    transform:scale(1.08);
-}
-
-/* MUSICA */
-
-.music{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    z-index:10;
-}
-
-.music button{
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    border:none;
-    background:#d9b23d;
-    font-size:25px;
-    box-shadow:0 0 20px rgba(224,184,62,.7);
-}
-
-/* CONFETI */
-
-.confetti{
-    position:fixed;
-    width:10px;
-    height:10px;
-    background:#e0b83e;
-    top:-20px;
-    animation:caer linear infinite;
-    z-index:1;
-}
-
-@keyframes caer{
-    to{
-        transform:translateY(110vh) rotate(720deg);
-    }
-}
-
-/* ANIMACIONES */
-
-@keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(30px);
+    0% {
+        transform: translate(0, 0);
     }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
+    100% {
+        transform: translate(400px, 250px);
     }
+
 }
 
-@keyframes zoom{
-    from{
-        opacity:0;
-        transform:scale(.5);
-    }
 
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+.container {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+
+    margin: auto;
+
 }
 
-@keyframes brillo{
-    from{
+
+/* =========================
+   SECCIONES
+========================= */
+
+section {
+
+    padding: 60px 25px;
+
+    text-align: center;
+
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.frase-principal {
+
+    color: #d8cba7;
+
+    font-size: 18px;
+
+    letter-spacing: 4px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+
+    animation: aparecer 2s ease;
+
+}
+
+
+.nombre {
+
+    font-size: 70px;
+
+    font-weight: bold;
+
+    color: #e0b83e;
+
+    line-height: 0.9;
+
+    text-shadow:
+
+        0 0 10px #e0b83e,
+
+        0 0 30px rgba(224,184,62,0.6);
+
+    animation: zoom 2s ease;
+
+}
+
+
+.cumple {
+
+    font-size: 22px;
+
+    letter-spacing: 10px;
+
+    color: #dddddd;
+
+    margin-top: 35px;
+
+}
+
+
+.numero {
+
+    font-size: 160px;
+
+    font-weight: bold;
+
+    color: #e0b83e;
+
+    line-height: 1;
+
+    text-shadow:
+
+        0 0 15px #e0b83e,
+
+        0 0 40px #b88919,
+
+        0 0 70px rgba(224,184,62,0.6);
+
+    animation: brillo 2s infinite alternate;
+
+}
+
+
+.anos {
+
+    font-size: 48px;
+
+    font-style: italic;
+
+    color: #e0b83e;
+
+}
+
+
+.linea {
+
+    width: 200px;
+
+    height: 2px;
+
+    background: #e0b83e;
+
+    margin: 40px auto;
+
+}
+
+
+.mensaje {
+
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    color: #eeeeee;
+
+}
+
+
+.mensaje strong {
+
+    color: #e0b83e;
+
+}
+
+
+/* =========================
+   TITULOS
+========================= */
+
+.titulo {
+
+    color: #e0b83e;
+
+    font-size: 30px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.card {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(35,35,35,0.95),
+            rgba(12,12,12,0.95)
+        );
+
+    border:
+
+        1px solid rgba(224,184,62,0.45);
+
+    border-radius: 25px;
+
+    padding: 35px 25px;
+
+    margin: 20px 0;
+
+    box-shadow:
+
+        0 0 30px rgba(224,184,62,0.10);
+
+}
+
+
+.info {
+
+    font-size: 21px;
+
+    line-height: 1.8;
+
+    color: #eeeeee;
+
+}
+
+
+.info strong {
+
+    color: #e0b83e;
+
+}
+
+
+/* =========================
+   CUENTA REGRESIVA
+========================= */
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.time {
+
+    width: 75px;
+
+    background: #111111;
+
+    border:
+
+        1px solid #d8b64c;
+
+    border-radius: 15px;
+
+    padding: 15px 8px;
+
+}
+
+
+.time span {
+
+    display: block;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    color: #e0b83e;
+
+}
+
+
+.time small {
+
+    color: #aaaaaa;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================
+   BOTON WHATSAPP
+========================= */
+
+.boton {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 18px 28px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #e0b83e,
+            #b88919
+        );
+
+    color: #111111;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    border-radius: 50px;
+
+    box-shadow:
+
+        0 0 25px rgba(224,184,62,0.45);
+
+    transition: 0.3s;
+
+}
+
+
+.boton:active {
+
+    transform: scale(0.95);
+
+}
+
+
+/* =========================
+   MUSICA
+========================= */
+
+.music-button {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    width: 65px;
+
+    height: 65px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #e0b83e;
+
+    color: #111111;
+
+    font-size: 28px;
+
+    z-index: 20;
+
+    box-shadow:
+
+        0 0 25px rgba(224,184,62,0.7);
+
+}
+
+
+/* =========================
+   CONFETI
+========================= */
+
+.confetti {
+
+    position: fixed;
+
+    width: 10px;
+
+    height: 10px;
+
+    top: -20px;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+    animation:
+
+        caer linear infinite;
+
+}
+
+
+@keyframes caer {
+
+    to {
+
+        transform:
+
+            translateY(110vh)
+            rotate(720deg);
+
+    }
+
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes zoom {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+
+            scale(0.5);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes brillo {
+
+    from {
+
         text-shadow:
-        0 0 10px #e0b83e;
+
+            0 0 10px #e0b83e;
+
     }
 
-    to{
+    to {
+
         text-shadow:
-        0 0 20px #e0b83e,
-        0 0 60px #e0b83e;
+
+            0 0 25px #e0b83e,
+
+            0 0 60px #e0b83e,
+
+            0 0 90px rgba(224,184,62,0.7);
+
     }
+
 }
 
-/* RESPONSIVE */
 
-@media(max-width:450px){
+/* =========================
+   PIE
+========================= */
 
-.nombre{
-    font-size:52px;
+.final {
+
+    color: #d8cba7;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    line-height: 1.8;
+
 }
 
-.numero{
-    font-size:120px;
-}
 
-.frase{
-    font-size:16px;
-    letter-spacing:3px;
-}
+/* =========================
+   CELULARES
+========================= */
 
-.mensaje{
-    font-size:22px;
-}
+@media (max-width: 480px) {
+
+    .nombre {
+
+        font-size: 58px;
+
+    }
+
+    .numero {
+
+        font-size: 135px;
+
+    }
+
+    .frase-principal {
+
+        font-size: 16px;
+
+        letter-spacing: 3px;
+
+    }
+
+    .mensaje {
+
+        font-size: 22px;
+
+    }
+
+    .titulo {
+
+        font-size: 26px;
+
+    }
+
+    .info {
+
+        font-size: 19px;
+
+    }
 
 }
 
 </style>
+
 </head>
-
-
-<body>
-
-<div class="container">
-
-<section class="intro">
-
-<div class="frase">
-HAY HISTORIAS QUE MERECEN CELEBRARSE...<br>
-Y ESTA ES UNA DE ELLAS.
-</div>
-
-<div class="nombre">
-TINCHO<br>ZURITA
-</div>
-
-<div class="cumple">
-CUMPLE
-</div>
-
-<div class="numero">
-44
-</div>
-
-<div class="anos">
-Años
-</div>
-
-<div class="linea"></div>
-
-<div class="mensaje">
-Porque <strong>44 no se cumplen todos los días</strong>,<br>
-esto hay que celebrarlo como se debe.
-</div>
-
-</section>
-
-
-<section>
-
-<h2 class="titulo">
-⏳ LA FIESTA COMIENZA EN
-</h2>
-
-<div class="countdown">
-
-<div class="time">
-<span id="dias">00</span>
-<small>DÍAS</small>
-</div>
-
-<div class="time">
-<span id="horas">00</span>
-<small>HORAS</small>
-</div>
-
-<div class="time">
-<span id="minutos">00</span>
-<small>MIN</small>
-</div>
-
-<div class="time">
-<span id="segundos">00</span>
-<small>SEG</small>
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="card">
-
-<h2 class="titulo">
-🎉 LA FIESTA
-</h2>
-
-<div class="info">
-
-<strong>📅 Día</strong><br>
-26 de septiembre
-
-<br><br>
-
-<strong>🕢 Hora</strong><br>
-7:30 PM
-
-<br><br>
-
-<strong>📍 Lugar</strong><br>
-Palapa La Carreta
-
-<br><br>
-
-Fraccionamiento Jalapa
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="card">
-
-<h2 class="titulo">
-👔 CÓDIGO DE VESTIMENTA
-</h2>
-
-<div class="info">
-
-<strong>HOMBRES</strong>
-
-<br>
-
-Guayabera en tonos
-<strong>negro o caqui</strong>
-
-<br>
-
-Pantalón negro o caqui
-
-<br><br>
-
-<strong>MUJERES</strong>
-
-<br>
-
-Vestido casual de noche
-
-<br>
-
-En tonos
-<strong>negro, dorado o caqui</strong>
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<div class="card">
-
-<h2 class="titulo">
-🥂 LO ÚNICO QUE NECESITAS...
-</h2>
-
-<div class="info">
-
-Ven cómodo,<br>
-listo para divertirte<br>
-y celebrar. 🎉🔥
-
-</div>
-
-</div>
-
-</section>
-
-
-<section>
-
-<h2 class="titulo">
-📲 CONFIRMA TU ASISTENCIA
-</h2>
-
-<div class="info">
-
-¿Listo para celebrar conmigo?
-
-</div>
-
-<a class="boton"
-href="https://wa.me/5219932424071?text=¡Hola%20Tincho!%20Confirmo%20que%20estaré%20en%20tu%20fiesta%20de%2044%20años!%20🎉🥳">
-
-CONFIRMAR POR WHATSAPP 💬
-
-</a>
-
-</section>
-
-
-<section>
-
-<div class="frase">
-
-¡NOS VEMOS EN LA FIESTA! 🥳
-
-<br><br>
-
-TINCHO ZURITA<br>
-
-<strong style="color:#e0b83e;font-size:24px;">
-44 AÑOS
-</strong>
-
-</div>
-
-</section>
-
-</div>
-
-
-<div class="music">
-
-<button onclick="toggleMusic()">
-🎵
-</button>
-
-</div>
-
-
-<!-- MUSICA -->
-
-<div id="player" style="display:none;">
-
-<iframe
-id="youtube"
-width="0"
-height="0"
-src="https://www.youtube.com/embed/UtF6Jej8yb4?enablejsapi=1"
-allow="autoplay">
-</iframe>
-
-</div>
-
-
-<script>
-
-/* CUENTA REGRESIVA */
-
-const fechaFiesta =
-new Date("September 26, 2026 19:30:00").getTime();
-
-
-setInterval(function(){
-
-const ahora = new Date().getTime();
-
-const distancia = fechaFiesta - ahora;
-
-const dias =
-Math.floor(distancia / (1000 * 60 * 60 * 24));
-
-const horas =
-Math.floor(
-(distancia % (1000 * 60 * 60 * 24))
-/
-(1000 * 60 * 60)
-);
-
-const minutos =
-Math.floor(
-(distancia % (1000 * 60 * 60))
-/
-(1000 * 60)
-);
-
-const segundos =
-Math.floor(
-(distancia % (1000 * 60))
-/
-1000
-);
-
-document.getElementById("dias").innerHTML = dias;
-document.getElementById("horas").innerHTML = horas;
-document.getElementById("minutos").innerHTML = minutos;
-document.getElementById("segundos").innerHTML = segundos;
-
-},1000);
-
-
-/* MUSICA */
-
-let musicPlaying = false;
-
-function toggleMusic(){
-
-const iframe =
-document.getElementById("youtube");
-
-if(!musicPlaying){
-
-iframe.src =
-"https://www.youtube.com/embed/UtF6Jej8yb4?autoplay=1";
-
-musicPlaying = true;
-
-}else{
-
-iframe.src =
-"https://www.youtube.com/embed/UtF6Jej8yb4";
-
-musicPlaying = false;
-
-}
-
-}
-
-
-/* CONFETI */
-
-for(let i=0;i<35;i++){
-
-let confetti =
-document.createElement("div");
-
-confetti.className =
-"confetti";
-
-confetti.style.left =
-Math.random()*100+"vw";
-
-confetti.style.animationDuration =
-(Math.random()*4+4)+"s";
-
-confetti.style.animationDelay =
-Math.random()*5+"s";
-
-document.body.appendChild(confetti);
-
-}
-
-</script>
-
-</body>
-</html>
