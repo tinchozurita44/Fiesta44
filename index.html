@@ -198,4 +198,729 @@ body {
 .dress-box:hover {
     transform: translateY(-5px);
     box-shadow:
-        0 0 30px rgba(230,
+        0 0 30px rgba(230,189,61,.25);
+}
+
+.info-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.info-title {
+    color: #e6bd3d;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.info-text {
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+
+/* CUENTA REGRESIVA */
+
+.countdown-section {
+    margin-top: 65px;
+}
+
+.countdown-title {
+    color: #e6bd3d;
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    width: 80px;
+    padding: 15px 5px;
+    background: rgba(230,189,61,.08);
+    border: 1px solid rgba(230,189,61,.35);
+    border-radius: 15px;
+}
+
+.time-number {
+    font-size: 30px;
+    font-weight: bold;
+    color: #e6bd3d;
+}
+
+.time-label {
+    margin-top: 5px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #cccccc;
+}
+
+
+/* VESTIMENTA */
+
+.dress-code {
+    margin-top: 70px;
+}
+
+.dress-title {
+    color: #e6bd3d;
+    font-size: 22px;
+    letter-spacing: 4px;
+    margin-bottom: 35px;
+}
+
+.dress-box h3 {
+    color: #e6bd3d;
+    margin-bottom: 15px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.dress-box p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+/* MENSAJE FINAL */
+
+.final-message {
+    margin: 75px auto 30px;
+    font-size: 25px;
+    line-height: 1.7;
+    max-width: 600px;
+    color: white;
+}
+
+
+/* BOTONES */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 18px 25px;
+    background: #e6bd3d;
+    color: #08090b;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    box-shadow: 0 0 25px rgba(230,189,61,.4);
+    transition: .3s;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(230,189,61,.7);
+}
+
+.button.secondary {
+    background: transparent;
+    color: #e6bd3d;
+    border: 1px solid #e6bd3d;
+}
+
+
+/* MUSICA */
+
+.music {
+    margin-top: 45px;
+}
+
+.music button {
+    background: transparent;
+    color: #e6bd3d;
+    border: 1px solid #e6bd3d;
+    padding: 15px 25px;
+    border-radius: 40px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.music button:hover {
+    background: rgba(230,189,61,.1);
+}
+
+
+/* FOOTER */
+
+.footer {
+    margin-top: 70px;
+    color: #aaaaaa;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+
+/* CONFETI */
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    z-index: 5;
+    pointer-events: none;
+    animation: fall 5s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+        opacity: 0;
+    }
+}
+
+
+/* ANIMACIONES */
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+
+    from {
+        text-shadow:
+            0 0 10px rgba(230,189,61,.4),
+            0 0 20px rgba(230,189,61,.2);
+    }
+
+    to {
+        text-shadow:
+            0 0 25px rgba(230,189,61,.8),
+            0 0 55px rgba(230,189,61,.5);
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 45px 20px 60px;
+    }
+
+    .top-text {
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .name {
+        font-size: 48px;
+    }
+
+    .age {
+        font-size: 125px;
+    }
+
+    .years {
+        font-size: 40px;
+    }
+
+    .message {
+        font-size: 21px;
+    }
+
+    .final-message {
+        font-size: 22px;
+    }
+
+    .time-box {
+        width: 70px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div id="particles"></div>
+
+
+<div class="container">
+
+
+<div class="top-text">
+
+HAY HISTORIAS QUE MERECEN CELEBRARSE...<br>
+Y ESTA ES UNA DE ELLAS.
+
+</div>
+
+
+<div class="name">
+
+TINCHO<br>
+ZURITA
+
+</div>
+
+
+<div class="turns">
+
+CUMPLE
+
+</div>
+
+
+<div class="age">
+
+44
+
+</div>
+
+
+<div class="years">
+
+Años
+
+</div>
+
+
+<div class="line"></div>
+
+
+<div class="message">
+
+Porque <strong>44 no se cumplen todos los días</strong>,<br>
+esto hay que celebrarlo como se debe.
+
+</div>
+
+
+<!-- CUENTA REGRESIVA -->
+
+<div class="countdown-section">
+
+<div class="countdown-title">
+
+⏳ LA FIESTA COMIENZA EN
+
+</div>
+
+<div class="countdown">
+
+<div class="time-box">
+
+<div class="time-number" id="days">00</div>
+
+<div class="time-label">DÍAS</div>
+
+</div>
+
+
+<div class="time-box">
+
+<div class="time-number" id="hours">00</div>
+
+<div class="time-label">HORAS</div>
+
+</div>
+
+
+<div class="time-box">
+
+<div class="time-number" id="minutes">00</div>
+
+<div class="time-label">MINUTOS</div>
+
+</div>
+
+
+<div class="time-box">
+
+<div class="time-number" id="seconds">00</div>
+
+<div class="time-label">SEGUNDOS</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- INFORMACION -->
+
+<div class="section">
+
+
+<div class="section-title">
+
+✨ LA FIESTA COMIENZA EN ✨
+
+</div>
+
+
+<div class="info-box">
+
+<div class="info-icon">📅</div>
+
+<div class="info-title">
+
+FECHA
+
+</div>
+
+<div class="info-text">
+
+26 DE SEPTIEMBRE
+
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<div class="info-icon">🕢</div>
+
+<div class="info-title">
+
+HORA
+
+</div>
+
+<div class="info-text">
+
+7:30 PM
+
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<div class="info-icon">📍</div>
+
+<div class="info-title">
+
+LUGAR
+
+</div>
+
+<div class="info-text">
+
+PALAPA LA CARRETA
+
+</div>
+
+<br>
+
+<div style="color:#cccccc;font-size:16px;">
+
+Fraccionamiento Jalapa
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- VESTIMENTA -->
+
+<div class="dress-code">
+
+
+<div class="dress-title">
+
+👔 CÓDIGO DE VESTIMENTA
+
+</div>
+
+
+<div class="dress-box">
+
+<h3>
+
+👔 HOMBRES
+
+</h3>
+
+<p>
+
+Guayabera + pantalón negro o caqui
+
+</p>
+
+</div>
+
+
+<div class="dress-box">
+
+<h3>
+
+👗 MUJERES
+
+</h3>
+
+<p>
+
+Vestido casual de noche
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<!-- MENSAJE FINAL -->
+
+<div class="final-message">
+
+✨ Lo importante es venir cómodo y listo para divertirte y celebrar conmigo! 🎉
+
+</div>
+
+
+<!-- BOTONES -->
+
+<div class="buttons">
+
+
+<a
+class="button"
+href="https://wa.me/529932424071"
+target="_blank">
+
+💬 CONFIRMAR ASISTENCIA
+
+</a>
+
+
+<a
+class="button secondary"
+href="https://www.google.com/maps/search/?api=1&query=Palapa+La+Carreta+Fraccionamiento+Jalapa"
+target="_blank">
+
+📍 VER UBICACIÓN
+
+</a>
+
+
+</div>
+
+
+<!-- MUSICA -->
+
+<div class="music">
+
+<button onclick="musicMessage()">
+
+🎵 MI CANCIÓN PARA ESTA NOCHE
+
+</button>
+
+</div>
+
+
+<div class="footer">
+
+PREPÁRATE PARA UNA GRAN NOCHE ✨
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+/* PARTICULAS */
+
+const particles = document.getElementById("particles");
+
+for (let i = 0; i < 35; i++) {
+
+    const particle = document.createElement("div");
+
+    particle.className = "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        6 + Math.random() * 10 + "s";
+
+    particle.style.animationDelay =
+        Math.random() * 8 + "s";
+
+    particle.style.width =
+        2 + Math.random() * 5 + "px";
+
+    particle.style.height =
+        particle.style.width;
+
+    particles.appendChild(particle);
+
+}
+
+
+/* CONFETI */
+
+function createConfetti() {
+
+    for (let i = 0; i < 60; i++) {
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.className =
+            "confetti";
+
+        confetti.style.left =
+            Math.random() * 100 + "%";
+
+        confetti.style.background =
+            Math.random() > .5
+            ? "#e6bd3d"
+            : "#ffffff";
+
+        confetti.style.animationDuration =
+            3 + Math.random() * 3 + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, 6000);
+
+    }
+
+}
+
+
+setTimeout(createConfetti, 800);
+
+
+/* CUENTA REGRESIVA */
+
+const partyDate =
+new Date("September 26, 2026 19:30:00").getTime();
+
+
+setInterval(() => {
+
+    const now =
+        new Date().getTime();
+
+    const distance =
+        partyDate - now;
+
+
+    if (distance > 0) {
+
+        const days =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
+
+        const hours =
+            Math.floor(
+                (distance %
+                (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+        const minutes =
+            Math.floor(
+                (distance %
+                (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+        const seconds =
+            Math.floor(
+                (distance %
+                (1000 * 60)) /
+                1000
+            );
+
+
+        document.getElementById("days")
+            .innerHTML = days;
+
+        document.getElementById("hours")
+            .innerHTML = hours;
+
+        document.getElementById("minutes")
+            .innerHTML = minutes;
+
+        document.getElementById("seconds")
+            .innerHTML = seconds;
+
+    }
+
+}, 1000);
+
+
+/* BOTON MUSICA */
+
+function musicMessage() {
+
+    alert(
+        "🎵 THE NIGHTS 🎵\n\n" +
+        "Esta noche se vive, se celebra y se recuerda.\n\n" +
+        "✨ LIVE A LIFE YOU WILL REMEMBER ✨"
+    );
+
+}
+
+
+</script>
+
+
+</body>
+</html>
