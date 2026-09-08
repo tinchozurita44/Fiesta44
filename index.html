@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Tincho Zurita | 44 Años 🎉</title>
+<title>🎉 Tincho Zurita | 44 Años 🎉</title>
 
 
 <style>
 
-/* ========================================
-   CONFIGURACIÓN GENERAL
-======================================== */
+/* ============================= */
+/* CONFIGURACIÓN GENERAL */
+/* ============================= */
 
 * {
     margin: 0;
@@ -27,149 +27,72 @@ html {
 }
 
 body {
-    background: #08090b;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    overflow-x: hidden;
-}
-
-
-/* ========================================
-   FONDO
-======================================== */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
 
     background:
+    radial-gradient(
+        circle at top,
+        #2d230c,
+        #08090b 55%
+    );
 
-        radial-gradient(
-            circle at 50% 15%,
-            rgba(215,170,45,.18),
-            transparent 30%
-        ),
+    color: white;
 
-        radial-gradient(
-            circle at 10% 60%,
-            rgba(215,170,45,.08),
-            transparent 30%
-        ),
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 
-        radial-gradient(
-            circle at 90% 80%,
-            rgba(215,170,45,.08),
-            transparent 30%
-        );
+    text-align: center;
 
-    pointer-events: none;
-
-    z-index: -1;
+    overflow-x: hidden;
 
 }
 
 
-/* ========================================
-   CONTENEDOR
-======================================== */
+/* ============================= */
+/* PARTÍCULAS DORADAS */
+/* ============================= */
 
-.container {
-
-    max-width: 700px;
-
-    margin: auto;
-
-    padding: 40px 20px 80px;
-
-}
-
-
-/* ========================================
-   PARTÍCULAS DORADAS
-======================================== */
-
-.particle {
+.particula {
 
     position: fixed;
 
     width: 6px;
-
     height: 6px;
 
-    background: #e6b93f;
+    background: #f6c94c;
 
     border-radius: 50%;
 
-    box-shadow: 0 0 15px #e6b93f;
+    box-shadow:
+    0 0 10px #f6c94c;
 
-    animation: float 7s infinite ease-in-out;
+    animation:
+    flotar linear infinite;
 
-    pointer-events: none;
+    opacity: .7;
 
     z-index: -1;
 
 }
 
 
-.p1 {
-    top: 15%;
-    left: 8%;
-}
-
-
-.p2 {
-    top: 28%;
-    right: 10%;
-    animation-delay: 2s;
-}
-
-
-.p3 {
-    top: 55%;
-    left: 15%;
-    animation-delay: 4s;
-}
-
-
-.p4 {
-    top: 72%;
-    right: 12%;
-    animation-delay: 1s;
-}
-
-
-.p5 {
-    top: 90%;
-    left: 45%;
-    animation-delay: 3s;
-}
-
-
-@keyframes float {
+@keyframes flotar {
 
     0% {
 
         transform:
-            translateY(0)
-            scale(1);
+        translateY(110vh)
+        translateX(0);
 
-        opacity: .3;
+        opacity: 0;
 
     }
 
 
-    50% {
+    20% {
 
-        transform:
-            translateY(-35px)
-            scale(1.8);
-
-        opacity: 1;
+        opacity: .8;
 
     }
 
@@ -177,1153 +100,561 @@ body::before {
     100% {
 
         transform:
-            translateY(0)
-            scale(1);
+        translateY(-20vh)
+        translateX(80px);
 
-        opacity: .3;
+        opacity: 0;
 
     }
 
 }
 
 
-/* ========================================
-   ANIMACIONES
-======================================== */
+/* ============================= */
+/* CONTENEDOR */
+/* ============================= */
 
-.fade {
+.contenedor {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding:
+
+    50px
+    20px
+    80px;
+
+}
+
+
+/* ============================= */
+/* ANIMACIÓN DE ENTRADA */
+/* ============================= */
+
+.aparecer {
 
     opacity: 0;
 
     transform:
-        translateY(40px);
+    translateY(30px);
 
-    transition:
-        opacity 1s ease,
-        transform 1s ease;
+    animation:
+    aparecer
+    1s
+    forwards;
 
 }
 
 
-.fade.show {
+@keyframes aparecer {
 
-    opacity: 1;
+    to {
 
-    transform:
+        opacity: 1;
+
+        transform:
         translateY(0);
 
-}
-
-
-/* ========================================
-   PORTADA
-======================================== */
-
-.hero {
-
-    padding:
-        35px 10px
-        60px;
+    }
 
 }
 
 
-.subtitle {
+/* ============================= */
+/* TÍTULOS */
+/* ============================= */
 
-    color: #d9cda8;
+.nombre {
 
-    font-size: 19px;
+    font-size: 46px;
 
-    letter-spacing: 4px;
+    font-weight: bold;
 
-    line-height: 1.8;
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+    color: #f6c94c;
+
+    text-shadow:
+
+    0 0 15px
+    rgba(246,201,76,.5);
+
+}
+
+
+.subtitulo {
+
+    font-size: 22px;
+
+    color: #dddddd;
+
+    line-height: 1.6;
 
     margin-bottom: 40px;
 
 }
 
 
-.name {
+.titulo-seccion {
 
-    font-size: 70px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    color: #e6b93f;
-
-    text-shadow:
-        0 0 15px rgba(230,185,63,.5),
-        0 0 40px rgba(230,185,63,.2);
-
-    animation:
-        glow 3s infinite alternate;
-
-}
-
-
-@keyframes glow {
-
-    from {
-
-        text-shadow:
-            0 0 10px rgba(230,185,63,.3);
-
-    }
-
-
-    to {
-
-        text-shadow:
-            0 0 25px rgba(230,185,63,.8),
-            0 0 60px rgba(230,185,63,.3);
-
-    }
-
-}
-
-
-.years-title {
-
-    margin-top: 35px;
-
-    color: #dddddd;
-
-    font-size: 20px;
-
-    letter-spacing: 10px;
-
-}
-
-
-.years {
-
-    font-size: 170px;
-
-    font-weight: bold;
-
-    color: #e6b93f;
-
-    line-height: 1;
-
-    margin:
-        15px 0;
-
-    text-shadow:
-        0 0 40px rgba(230,185,63,.5);
-
-    animation:
-        agePulse 2s infinite alternate;
-
-}
-
-
-@keyframes agePulse {
-
-    from {
-
-        transform:
-            scale(1);
-
-    }
-
-
-    to {
-
-        transform:
-            scale(1.04);
-
-    }
-
-}
-
-
-.anos {
-
-    color: #e6b93f;
-
-    font-size: 45px;
-
-}
-
-
-.line {
-
-    width: 55%;
-
-    height: 2px;
-
-    background: #d4aa3c;
-
-    margin:
-        55px auto;
-
-}
-
-
-.intro {
-
-    font-size: 24px;
-
-    line-height: 1.7;
-
-    color: #dddddd;
-
-}
-
-
-.intro strong {
-
-    color: #e6b93f;
-
-}
-
-
-/* ========================================
-   SECCIONES
-======================================== */
-
-.section {
-
-    margin-top: 85px;
-
-}
-
-
-.section-title {
-
-    color: #e6b93f;
-
-    font-size: 23px;
-
-    letter-spacing: 5px;
-
-    line-height: 1.5;
-
-    margin-bottom: 35px;
-
-}
-
-
-.section-text {
-
-    color: #dddddd;
-
-    font-size: 20px;
-
-    line-height: 1.7;
-
-}
-
-
-/* ========================================
-   CONTADOR
-======================================== */
-
-.countdown {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 10px;
-
-    margin-top: 30px;
-
-}
-
-
-.time-box {
-
-    border:
-        1px solid
-        rgba(230,185,63,.5);
-
-    border-radius: 20px;
-
-    padding:
-        25px 5px;
-
-    background:
-        rgba(255,255,255,.03);
-
-    box-shadow:
-        0 0 25px
-        rgba(230,185,63,.08);
-
-}
-
-
-.time-number {
-
-    font-size: 42px;
-
-    font-weight: bold;
-
-    color: #e6b93f;
-
-}
-
-
-.time-label {
-
-    color: #cccccc;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    margin-top: 10px;
-
-}
-
-
-/* ========================================
-   TARJETAS
-======================================== */
-
-.card {
-
-    margin-top: 25px;
-
-    border:
-        1px solid
-        rgba(230,185,63,.45);
-
-    border-radius: 28px;
-
-    padding:
-        38px 25px;
-
-    background:
-
-        linear-gradient(
-
-            145deg,
-
-            rgba(255,255,255,.05),
-
-            rgba(255,255,255,.01)
-
-        );
-
-    box-shadow:
-        0 0 35px
-        rgba(0,0,0,.4);
-
-}
-
-
-.card-icon {
-
-    font-size: 52px;
-
-    margin-bottom: 18px;
-
-}
-
-
-.card-small-title {
-
-    color: #e6b93f;
-
-    letter-spacing: 5px;
-
-    font-size: 16px;
-
-    margin-bottom: 18px;
-
-}
-
-
-.card-big-text {
-
-    font-size: 29px;
-
-    line-height: 1.4;
-
-}
-
-
-.card-subtext {
-
-    color: #cccccc;
-
-    margin-top: 15px;
-
-    font-size: 18px;
-
-    line-height: 1.6;
-
-}
-
-
-/* ========================================
-   VESTIMENTA
-======================================== */
-
-.dress-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 18px;
-
-}
-
-
-.dress-card {
-
-    border:
-        1px solid
-        rgba(230,185,63,.4);
-
-    border-radius: 25px;
-
-    padding:
-        30px 15px;
-
-    background:
-        rgba(255,255,255,.03);
-
-}
-
-
-.dress-card h3 {
-
-    color: #e6b93f;
-
-    margin-bottom: 15px;
-
-    font-size: 21px;
-
-}
-
-
-.dress-card p {
-
-    color: #dddddd;
-
-    line-height: 1.7;
-
-    font-size: 16px;
-
-}
-
-
-/* ========================================
-   VIAJE
-======================================== */
-
-.travel-card {
-
-    overflow: hidden;
-
-}
-
-
-.plane {
-
-    font-size: 50px;
-
-    display: inline-block;
-
-    margin-bottom: 20px;
-
-    animation:
-        planeMove
-        4s infinite
-        ease-in-out;
-
-}
-
-
-@keyframes planeMove {
-
-    0% {
-
-        transform:
-            translateX(-20px)
-            rotate(-10deg);
-
-    }
-
-
-    50% {
-
-        transform:
-            translateX(25px)
-            translateY(-10px)
-            rotate(5deg);
-
-    }
-
-
-    100% {
-
-        transform:
-            translateX(-20px)
-            rotate(-10deg);
-
-    }
-
-}
-
-
-.travel-title {
-
-    color: #e6b93f;
-
-    font-size: 23px;
-
-    letter-spacing: 3px;
-
-    line-height: 1.6;
-
-}
-
-
-.travel-text {
-
-    margin-top: 25px;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    color: #dddddd;
-
-}
-
-
-.travel-highlight {
-
-    color: #e6b93f;
-
-    font-size: 21px;
-
-    font-weight: bold;
-
-}
-
-
-/* ========================================
-   REGALO / BANCO
-======================================== */
-
-.gift-box {
-
-    margin-top: 25px;
-
-    border:
-        1px solid
-        rgba(230,185,63,.5);
-
-    border-radius: 25px;
-
-    overflow: hidden;
-
-}
-
-
-.gift-header {
-
-    padding: 28px 20px;
-
-    cursor: pointer;
-
-    background:
-        rgba(230,185,63,.08);
-
-    color: #e6b93f;
-
-    font-size: 18px;
-
-    line-height: 1.6;
-
-}
-
-
-.gift-content {
-
-    display: none;
-
-    padding: 30px 20px;
-
-    animation:
-        openGift .5s ease;
-
-}
-
-
-.gift-content.open {
-
-    display: block;
-
-}
-
-
-@keyframes openGift {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(-15px);
-
-    }
-
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-.bank {
-
-    color: #e6b93f;
-
-    font-size: 30px;
-
-    font-weight: bold;
-
-    margin-bottom: 20px;
-
-}
-
-
-.bank-name {
-
-    color: white;
-
-    font-size: 19px;
-
-    margin-bottom: 20px;
-
-}
-
-
-.card-number {
-
-    color: #e6b93f;
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-
-    margin:
-        20px 0;
-
-}
-
-
-/* ========================================
-   BOTONES
-======================================== */
-
-.button {
-
-    display: inline-block;
-
-    margin-top: 25px;
-
-    padding:
-        18px 28px;
-
-    border-radius: 50px;
-
-    border:
-        1px solid #e6b93f;
-
-    background:
-        transparent;
-
-    color: #e6b93f;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-    cursor: pointer;
-
-    text-decoration: none;
-
-    transition: .3s;
-
-}
-
-
-.button:hover,
-.button:active {
-
-    background: #e6b93f;
-
-    color: #08090b;
-
-    transform:
-        scale(1.05);
-
-}
-
-
-.whatsapp {
-
-    background: #e6b93f;
-
-    color: #08090b;
-
-    font-size: 17px;
-
-    padding:
-        20px 28px;
-
-    box-shadow:
-        0 0 30px
-        rgba(230,185,63,.3);
-
-    animation:
-        whatsappPulse
-        2s infinite;
-
-}
-
-
-@keyframes whatsappPulse {
-
-    0% {
-
-        transform:
-            scale(1);
-
-    }
-
-
-    50% {
-
-        transform:
-            scale(1.05);
-
-    }
-
-
-    100% {
-
-        transform:
-            scale(1);
-
-    }
-
-}
-
-
-/* ========================================
-   FINAL
-======================================== */
-
-.final {
-
-    margin-top: 85px;
-
-    padding:
-        30px 15px;
-
-}
-
-
-.final-text {
-
-    color: #e6b93f;
-
-    font-size: 23px;
-
-    line-height: 1.8;
-
-}
-
-
-.footer {
-
-    margin-top: 70px;
-
-    color: #888888;
-
-    font-size: 14px;
-
-}
-
-
-/* ========================================
-   BOTÓN DE MÚSICA
-======================================== */
-
-.music-button {
-
-    position: fixed;
-
-    bottom: 25px;
-
-    right: 20px;
-
-    width: 65px;
-
-    height: 65px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #e6b93f;
-
-    color: #08090b;
-
-    font-size: 30px;
-
-    cursor: pointer;
-
-    z-index: 1000;
-
-    box-shadow:
-        0 0 25px
-        rgba(230,185,63,.8);
-
-    animation:
-        musicPulse
-        2s infinite;
-
-}
-
-
-@keyframes musicPulse {
-
-    0% {
-
-        transform:
-            scale(1);
-
-        box-shadow:
-            0 0 15px
-            rgba(230,185,63,.5);
-
-    }
-
-
-    50% {
-
-        transform:
-            scale(1.12);
-
-        box-shadow:
-            0 0 40px
-            rgba(230,185,63,1);
-
-    }
-
-
-    100% {
-
-        transform:
-            scale(1);
-
-        box-shadow:
-            0 0 15px
-            rgba(230,185,63,.5);
-
-    }
-
-}
-
-
-/* ========================================
-   VENTANA MÚSICA
-======================================== */
-
-.music-modal {
-
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(0,0,0,.88);
-
-    z-index: 2000;
-
-    justify-content: center;
-
-    align-items: center;
-
-    padding: 20px;
-
-}
-
-
-.music-modal.show {
-
-    display: flex;
-
-}
-
-
-.music-player {
-
-    position: relative;
-
-    width: 100%;
-
-    max-width: 450px;
-
-    background: #111111;
-
-    border:
-        1px solid #e6b93f;
-
-    border-radius: 25px;
-
-    padding:
-        40px 20px 25px;
-
-    box-shadow:
-        0 0 50px
-        rgba(230,185,63,.4);
-
-    animation:
-        musicAppear
-        .5s ease;
-
-}
-
-
-@keyframes musicAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            scale(.8)
-            translateY(30px);
-
-    }
-
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-
-    }
-
-}
-
-
-.close-music {
-
-    position: absolute;
-
-    top: 10px;
-
-    right: 15px;
-
-    background: none;
-
-    border: none;
-
-    color: #e6b93f;
+    color: #f6c94c;
 
     font-size: 28px;
 
-    cursor: pointer;
-
-}
-
-
-.music-title {
-
-    color: #e6b93f;
-
-    font-size: 27px;
-
-    font-weight: bold;
-
     letter-spacing: 4px;
-
-    margin-bottom: 10px;
-
-}
-
-
-.music-subtitle {
-
-    color: #cccccc;
-
-    font-size: 18px;
 
     margin-bottom: 25px;
 
 }
 
 
-.music-message {
+/* ============================= */
+/* TARJETAS */
+/* ============================= */
 
-    color: #cccccc;
+.tarjeta {
 
-    font-size: 15px;
+    background:
 
-    line-height: 1.7;
+    rgba(
+        255,
+        255,
+        255,
+        .04
+    );
 
-    margin-top: 20px;
+    border:
+
+    1px solid
+    rgba(
+        246,
+        201,
+        76,
+        .45
+    );
+
+    border-radius: 25px;
+
+    padding: 35px 20px;
+
+    margin:
+
+    30px 0;
+
+    box-shadow:
+
+    0 0 30px
+    rgba(
+        246,
+        201,
+        76,
+        .08
+    );
+
+    transition:
+    .3s;
 
 }
 
 
-/* ========================================
-   CELULAR
-======================================== */
+.tarjeta:hover {
+
+    transform:
+    scale(1.02);
+
+}
+
+
+/* ============================= */
+/* CUENTA REGRESIVA */
+/* ============================= */
+
+.contador {
+
+    display:
+
+    grid;
+
+    grid-template-columns:
+
+    repeat(
+        4,
+        1fr
+    );
+
+    gap: 12px;
+
+}
+
+
+.tiempo {
+
+    border:
+
+    1px solid
+    rgba(
+        246,
+        201,
+        76,
+        .5
+    );
+
+    border-radius: 20px;
+
+    padding:
+
+    20px
+    8px;
+
+    background:
+
+    rgba(
+        0,
+        0,
+        0,
+        .25
+    );
+
+}
+
+
+.numero {
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    color: #f6c94c;
+
+}
+
+
+.etiqueta {
+
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    color: #cccccc;
+
+}
+
+
+/* ============================= */
+/* INFORMACIÓN */
+/* ============================= */
+
+.icono {
+
+    font-size: 40px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.info-titulo {
+
+    color: #f6c94c;
+
+    letter-spacing: 3px;
+
+    font-size: 15px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.info-texto {
+
+    font-size: 24px;
+
+    line-height: 1.5;
+
+}
+
+
+/* ============================= */
+/* CÓDIGO DE VESTIMENTA */
+/* ============================= */
+
+.vestimenta {
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+.vestimenta strong {
+
+    color: #f6c94c;
+
+}
+
+
+/* ============================= */
+/* BOTONES */
+/* ============================= */
+
+.boton {
+
+    display:
+    block;
+
+    width: 100%;
+
+    margin:
+    25px auto;
+
+    padding:
+    18px;
+
+    border:
+    none;
+
+    border-radius:
+    50px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f6c94c,
+        #c89422
+    );
+
+    color:
+    #111;
+
+    font-size:
+    18px;
+
+    font-weight:
+    bold;
+
+    text-decoration:
+    none;
+
+    cursor:
+    pointer;
+
+    transition:
+    .3s;
+
+    box-shadow:
+
+    0 10px 25px
+    rgba(
+        246,
+        201,
+        76,
+        .25
+    );
+
+}
+
+
+.boton:hover {
+
+    transform:
+    scale(1.04);
+
+}
+
+
+.boton:active {
+
+    transform:
+    scale(.97);
+
+}
+
+
+/* ============================= */
+/* BOTÓN MÚSICA */
+/* ============================= */
+
+.musica {
+
+    background:
+
+    transparent;
+
+    color:
+    #f6c94c;
+
+    border:
+
+    1px solid
+    #f6c94c;
+
+}
+
+
+/* ============================= */
+/* REGALO */
+/* ============================= */
+
+.regalo {
+
+    background:
+
+    linear-gradient(
+        135deg,
+        rgba(
+            246,
+            201,
+            76,
+            .12
+        ),
+        rgba(
+            255,
+            255,
+            255,
+            .03
+        )
+    );
+
+}
+
+
+.regalo-texto {
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    color:
+    #eeeeee;
+
+}
+
+
+.cuenta {
+
+    margin-top:
+    20px;
+
+    font-size:
+    17px;
+
+    line-height:
+    1.8;
+
+    color:
+    #f6c94c;
+
+}
+
+
+/* ============================= */
+/* MENSAJE FINAL */
+/* ============================= */
+
+.final {
+
+    margin-top:
+    50px;
+
+    font-size:
+    23px;
+
+    line-height:
+    1.7;
+
+    color:
+    #eeeeee;
+
+}
+
+
+/* ============================= */
+/* CONFETI */
+/* ============================= */
+
+.confeti {
+
+    position:
+    fixed;
+
+    width:
+    10px;
+
+    height:
+    10px;
+
+    top:
+    -20px;
+
+    animation:
+    caer
+    5s
+    linear
+    forwards;
+
+    z-index:
+    9999;
+
+}
+
+
+@keyframes caer {
+
+    to {
+
+        transform:
+
+        translateY(110vh)
+        rotate(720deg);
+
+        opacity:
+        0;
+
+    }
+
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
 @media
-(max-width: 600px) {
+(max-width: 500px) {
 
+    .nombre {
 
-    .container {
-
-        padding:
-            30px 16px
-            70px;
+        font-size:
+        36px;
 
     }
 
 
-    .subtitle {
-
-        font-size: 15px;
-
-        letter-spacing: 3px;
-
-    }
-
-
-    .name {
-
-        font-size: 56px;
-
-    }
-
-
-    .years {
-
-        font-size: 130px;
-
-    }
-
-
-    .anos {
-
-        font-size: 38px;
-
-    }
-
-
-    .intro {
-
-        font-size: 21px;
-
-    }
-
-
-    .section-title {
-
-        font-size: 19px;
-
-        letter-spacing: 3px;
-
-    }
-
-
-    .countdown {
-
-        gap: 7px;
-
-    }
-
-
-    .time-box {
-
-        padding:
-            20px 3px;
-
-    }
-
-
-    .time-number {
-
-        font-size: 31px;
-
-    }
-
-
-    .time-label {
-
-        font-size: 8px;
-
-        letter-spacing: 1px;
-
-    }
-
-
-    .dress-grid {
+    .contador {
 
         grid-template-columns:
-            1fr;
+
+        repeat(
+            2,
+            1fr
+        );
 
     }
 
 
-    .card-big-text {
+    .info-texto {
 
-        font-size: 25px;
-
-    }
-
-
-    .card-number {
-
-        font-size: 18px;
-
-        letter-spacing: 2px;
-
-    }
-
-
-    .music-button {
-
-        width: 60px;
-
-        height: 60px;
-
-        bottom: 20px;
-
-        right: 15px;
+        font-size:
+        21px;
 
     }
 
@@ -1337,729 +668,308 @@ body::before {
 <body>
 
 
-<!-- PARTÍCULAS -->
-
-<div class="particle p1"></div>
-<div class="particle p2"></div>
-<div class="particle p3"></div>
-<div class="particle p4"></div>
-<div class="particle p5"></div>
+<div class="contenedor">
 
 
-
-<div class="container">
-
-
-<!-- =====================================
-     PORTADA
-===================================== -->
-
-<div class="hero fade">
+<!-- ============================= -->
+<!-- ENCABEZADO -->
+<!-- ============================= -->
 
 
-    <div class="subtitle">
-
-        HAY HISTORIAS QUE MERECEN<br>
-
-        CELEBRARSE...<br>
-
-        Y ESTA ES UNA DE ELLAS.
-
-    </div>
+<div
+class="aparecer"
+style="animation-delay:.2s">
 
 
-    <div class="name">
+<div class="nombre">
 
-        TINCHO<br>
+🎉 TINCHO ZURITA 🎉
 
-        ZURITA
-
-    </div>
+</div>
 
 
-    <div class="years-title">
+<div class="subtitulo">
 
-        CUMPLE
+¡44 años!
 
-    </div>
+<br><br>
 
+La vida se vive una vez...
 
-    <div class="years">
+<br>
 
-        44
+y si hay algo que celebrar,
 
-    </div>
+<br>
 
+¡se celebra como se debe! 🍾✨
 
-    <div class="anos">
-
-        AÑOS
-
-    </div>
+</div>
 
 
-    <div class="line"></div>
+</div>
 
 
-    <div class="intro">
+<!-- ============================= -->
+<!-- CUENTA REGRESIVA -->
+<!-- ============================= -->
 
-        Porque
 
-        <strong>
-            44 no se cumplen todos los días
-        </strong>
+<div
+class="tarjeta aparecer"
+style="animation-delay:.5s">
 
-        <br>
 
-        esto hay que celebrarlo
-        como se debe.
+<div class="titulo-seccion">
 
-    </div>
+⏳ LA FIESTA COMIENZA EN
+
+</div>
+
+
+<div class="contador">
+
+
+<div class="tiempo">
+
+<div
+class="numero"
+id="dias">
+
+0
+
+</div>
+
+<div class="etiqueta">
+
+DÍAS
+
+</div>
+
+</div>
+
+
+
+<div class="tiempo">
+
+<div
+class="numero"
+id="horas">
+
+0
+
+</div>
+
+<div class="etiqueta">
+
+HORAS
+
+</div>
+
+</div>
+
+
+
+<div class="tiempo">
+
+<div
+class="numero"
+id="minutos">
+
+0
+
+</div>
+
+<div class="etiqueta">
+
+MINUTOS
+
+</div>
+
+</div>
+
+
+
+<div class="tiempo">
+
+<div
+class="numero"
+id="segundos">
+
+0
+
+</div>
+
+<div class="etiqueta">
+
+SEGUNDOS
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- ============================= -->
+<!-- FECHA -->
+<!-- ============================= -->
+
+
+<div
+class="tarjeta aparecer"
+style="animation-delay:.7s">
+
+
+<div class="icono">
+
+📅
+
+</div>
+
+
+<div class="info-titulo">
+
+FECHA
+
+</div>
+
+
+<div class="info-texto">
+
+26 DE SEPTIEMBRE
+
+</div>
 
 
 </div>
 
 
 
-<!-- =====================================
-     CONTADOR
-===================================== -->
-
-<div class="section fade">
+<!-- ============================= -->
+<!-- HORA -->
+<!-- ============================= -->
 
 
-    <div class="section-title">
-
-        ⌛ LA FIESTA COMIENZA EN ⌛
-
-    </div>
+<div
+class="tarjeta aparecer"
+style="animation-delay:.9s">
 
 
-    <div class="countdown">
+<div class="icono">
+
+🕢
+
+</div>
 
 
-        <div class="time-box">
+<div class="info-titulo">
 
-            <div
-            class="time-number"
-            id="days">
+HORA
 
-                00
-
-            </div>
-
-            <div
-            class="time-label">
-
-                DÍAS
-
-            </div>
-
-        </div>
+</div>
 
 
+<div class="info-texto">
 
-        <div class="time-box">
+7:30 PM
 
-            <div
-            class="time-number"
-            id="hours">
-
-                00
-
-            </div>
-
-            <div
-            class="time-label">
-
-                HORAS
-
-            </div>
-
-        </div>
-
-
-
-        <div class="time-box">
-
-            <div
-            class="time-number"
-            id="minutes">
-
-                00
-
-            </div>
-
-            <div
-            class="time-label">
-
-                MIN
-
-            </div>
-
-        </div>
-
-
-
-        <div class="time-box">
-
-            <div
-            class="time-number"
-            id="seconds">
-
-                00
-
-            </div>
-
-            <div
-            class="time-label">
-
-                SEG
-
-            </div>
-
-        </div>
-
-
-    </div>
+</div>
 
 
 </div>
 
 
 
-<!-- =====================================
-     CELEBRACIÓN
-===================================== -->
-
-<div class="section fade">
+<!-- ============================= -->
+<!-- LUGAR -->
+<!-- ============================= -->
 
 
-    <div class="section-title">
-
-        🥂 PREPÁRATE PARA CELEBRAR 🥂
-
-    </div>
+<div
+class="tarjeta aparecer"
+style="animation-delay:1.1s">
 
 
-    <div class="section-text">
+<div class="icono">
 
-        Una noche para reír,
-        brindar, bailar
+📍
 
-        <br>
+</div>
 
-        y crear nuevos recuerdos.
 
-    </div>
+<div class="info-titulo">
+
+LUGAR
+
+</div>
+
+
+<div class="info-texto">
+
+PALAPA LA CARRETA
+
+<br><br>
+
+Fraccionamiento Jalapa
+
+</div>
 
 
 </div>
 
 
 
-<!-- =====================================
-     FECHA
-===================================== -->
-
-<div class="section fade">
+<!-- ============================= -->
+<!-- VESTIMENTA -->
+<!-- ============================= -->
 
 
-    <div class="card">
+<div
+class="tarjeta aparecer"
+style="animation-delay:1.3s">
 
 
-        <div class="card-icon">
+<div class="titulo-seccion">
 
-            📅
-
-        </div>
-
-
-        <div class="card-small-title">
-
-            FECHA
-
-        </div>
-
-
-        <div class="card-big-text">
-
-            26 DE SEPTIEMBRE
-
-        </div>
-
-
-    </div>
-
+👔 CÓDIGO DE VESTIMENTA
 
 </div>
 
 
+<div class="vestimenta">
 
-<!-- =====================================
-     HORA
-===================================== -->
 
-<div class="section fade">
+<strong>
 
+HOMBRES
 
-    <div class="card">
+</strong>
 
+<br>
 
-        <div class="card-icon">
+Guayabera
 
-            🕢
++
 
-        </div>
+pantalón negro o caqui
 
 
-        <div class="card-small-title">
+<br><br>
 
-            HORA
 
-        </div>
+<strong>
 
+MUJERES
 
-        <div class="card-big-text">
+</strong>
 
-            7:30 PM
+<br>
 
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<!-- =====================================
-     LUGAR
-===================================== -->
-
-<div class="section fade">
-
-
-    <div class="card">
-
-
-        <div class="card-icon">
-
-            📍
-
-        </div>
-
-
-        <div class="card-small-title">
-
-            LUGAR
-
-        </div>
-
-
-        <div class="card-big-text">
-
-            PALAPA LA CARRETA
-
-        </div>
-
-
-        <div class="card-subtext">
-
-            Fraccionamiento Jalapa
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<!-- =====================================
-     VESTIMENTA
-===================================== -->
-
-<div class="section fade">
-
-
-    <div class="section-title">
-
-        👔 CÓDIGO DE VESTIMENTA
-
-    </div>
-
-
-    <div class="dress-grid">
-
-
-        <div class="dress-card">
-
-
-            <h3>
-
-                HOMBRES
-
-            </h3>
-
-
-            <p>
-
-                Guayabera
-
-                <br>
-
-                +
-
-                <br>
-
-                Pantalón negro
-                o caqui
-
-            </p>
-
-
-        </div>
-
-
-
-        <div class="dress-card">
-
-
-            <h3>
-
-                MUJERES
-
-            </h3>
-
-
-            <p>
-
-                Vestido casual
-
-                <br>
-
-                de noche
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<!-- =====================================
-     PRÓXIMA AVENTURA
-===================================== -->
-
-<div class="section fade">
-
-
-    <div class="card travel-card">
-
-
-        <div class="plane">
-
-            ✈️
-
-        </div>
-
-
-        <div class="travel-title">
-
-            UN PEQUEÑO IMPULSO
-
-            <br>
-
-            PARA MI PRÓXIMA AVENTURA
-
-        </div>
-
-
-        <div class="travel-text">
-
-
-            Tu presencia es el mejor regalo
-            que puedo recibir. ❤️
-
-
-            <br><br>
-
-
-            Pero si quieres tener
-            un pequeño detalle conmigo
-            y ayudarme a seguir haciendo
-            una de las cosas que más amo...
-
-
-            <br><br>
-
-
-            <span
-            class="travel-highlight">
-
-                ✈️ VIAJAR Y CONOCER
-                EL MUNDO 🌎
-
-            </span>
-
-
-            <br><br>
-
-
-            😅 Cualquier aportación
-            para mi próxima aventura
-            será recibida
-            con muchísimo cariño.
-
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<!-- =====================================
-     SOBRES
-===================================== -->
-
-<div class="section fade">
-
-
-    <div class="card">
-
-
-        <div class="card-icon">
-
-            💌
-
-        </div>
-
-
-        <div class="card-small-title">
-
-            SOBRES
-
-        </div>
-
-
-        <div class="card-subtext">
-
-            Habrá sobres disponibles
-
-            <br>
-
-            durante la fiesta.
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<!-- =====================================
-     DATOS BANCARIOS
-===================================== -->
-
-<div class="section fade">
-
-
-    <div class="gift-box">
-
-
-        <div
-        class="gift-header"
-        onclick="toggleGift()">
-
-
-            ✈️ ¿QUIERES APOYAR
-            MI PRÓXIMA AVENTURA?
-
-            <br><br>
-
-            💳 TOCA AQUÍ PARA
-            VER LOS DATOS
-
-
-        </div>
-
-
-
-        <div
-        class="gift-content"
-        id="giftContent">
-
-
-            <div class="bank">
-
-                BBVA
-
-            </div>
-
-
-            <div class="bank-name">
-
-                👤 Agustín Armando Zurita
-
-            </div>
-
-
-            <div class="card-small-title">
-
-                NÚMERO DE TARJETA
-
-            </div>
-
-
-            <div
-            class="card-number"
-            id="cardNumber">
-
-                4152 3137 2014 1337
-
-            </div>
-
-
-            <button
-            class="button"
-            onclick="copyCard()">
-
-                📋 COPIAR NÚMERO
-                DE TARJETA
-
-            </button>
-
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<!-- =====================================
-     DESTINO
-===================================== -->
-
-<div class="section fade">
-
-
-    <div class="card">
-
-
-        <div class="card-icon">
-
-            🌎
-
-        </div>
-
-
-        <div class="section-title">
-
-            PRÓXIMO DESTINO...
-
-        </div>
-
-
-        <div class="card-big-text">
-
-            POR DESCUBRIR ✨
-
-        </div>
-
-
-        <div class="card-subtext">
-
-            Gracias por ayudarme
-            a seguir coleccionando recuerdos
-
-            <br>
-
-            alrededor del mundo. ❤️✈️
-
-        </div>
-
-
-    </div>
-
-
-</div>
-
-
-
-<!-- =====================================
-     FINAL Y WHATSAPP
-===================================== -->
-
-<div class="final fade">
-
-
-    <div class="final-text">
-
-
-        ✨ Lo importante es venir cómodo,
-
-        <br>
-
-        listo para divertirte
-
-        <br>
-
-        y celebrar conmigo! 🥳✨
-
-
-    </div>
-
-
-
-    <a
-    class="button whatsapp"
-    id="whatsappButton"
-    href="#">
-
-
-        🎉 CONFIRMAR ASISTENCIA
-
-
-    </a>
-
-
-</div>
-
-
-
-<!-- =====================================
-     FOOTER
-===================================== -->
-
-<div class="footer">
-
-
-    TINCHO ZURITA
-
-    <br><br>
-
-    44 AÑOS 🥳
+Vestido casual de noche
 
 
 </div>
@@ -2069,101 +979,257 @@ body::before {
 
 
 
-<!-- =====================================
-     BOTÓN DE MÚSICA
-===================================== -->
+<!-- ============================= -->
+<!-- MENSAJE -->
+<!-- ============================= -->
+
+
+<div
+class="tarjeta aparecer"
+style="animation-delay:1.5s">
+
+
+<div class="final">
+
+✨
+
+<br><br>
+
+Lo importante es venir cómodo
+
+<br>
+
+y listo para divertirte
+
+<br>
+
+y celebrar conmigo.
+
+<br><br>
+
+¡Quiero que sea una noche
+
+<br>
+
+que recordemos siempre! 🎉🥂
+
+</div>
+
+
+</div>
+
+
+
+<!-- ============================= -->
+<!-- MÚSICA -->
+<!-- ============================= -->
+
+
+<div
+class="tarjeta aparecer"
+style="animation-delay:1.7s">
+
+
+<div class="titulo-seccion">
+
+🎵 MI CANCIÓN
+
+</div>
+
+
+<p
+style="
+font-size:20px;
+line-height:1.7;
+color:#eeeeee;
+">
+
+Porque una fiesta,
+
+una nueva vuelta al sol
+
+y una vida llena de aventuras...
+
+merecen una canción especial.
+
+<br><br>
+
+<strong
+style="color:#f6c94c;">
+
+THE NIGHTS
+
+<br>
+
+AVICII
+
+</strong>
+
+</p>
+
 
 <button
-class="music-button"
-onclick="toggleMusic()"
-id="musicButton"
-title="Escuchar música">
+class="boton musica"
+onclick="reproducirMusica()">
 
-    🎵
+▶️ ESCUCHAR THE NIGHTS
 
 </button>
 
 
+</div>
 
-<!-- =====================================
-     VENTANA DE MÚSICA
-===================================== -->
+
+
+<!-- ============================= -->
+<!-- REGALO -->
+<!-- ============================= -->
+
 
 <div
-class="music-modal"
-id="musicModal">
+class="tarjeta regalo aparecer"
+style="animation-delay:1.9s">
 
 
-    <div class="music-player">
+<div class="titulo-seccion">
+
+✈️ MI PRÓXIMA AVENTURA
+
+</div>
 
 
-        <button
-        class="close-music"
-        onclick="toggleMusic()">
+<div class="regalo-texto">
 
-            ✕
+Tu presencia será,
 
-        </button>
+sin duda,
 
+el mejor regalo.
 
-        <div class="music-title">
+❤️
 
-            🎵 THE NIGHTS
+<br><br>
 
-        </div>
+Pero si además quieres
 
+ayudarme a sumar kilómetros,
 
-        <div class="music-subtitle">
+coleccionar recuerdos
 
-            Avicii
+y seguir conociendo el mundo...
 
-        </div>
+🌎✈️
 
+<br><br>
 
-        <iframe
+puedes aportar
 
-            id="youtubePlayer"
+un pequeño granito de arena
 
-            width="100%"
+para mi próxima aventura.
 
-            height="200"
+😅🍻
 
-            src=""
-
-            title="The Nights - Avicii"
-
-            frameborder="0"
-
-            allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture"
-
-            allowfullscreen>
-
-        </iframe>
+</div>
 
 
-        <div class="music-message">
+<div class="cuenta">
+
+💳 BBVA
+
+<br>
+
+AGUSTÍN ARMANDO ZURITA
+
+<br><br>
+
+<strong>
+
+4152 3137 2014 1337
+
+</strong>
+
+</div>
 
 
-            🎉 Una de las canciones favoritas
-            de Tincho para celebrar
-            una noche inolvidable.
-
-            <br><br>
-
-            ✈️🌎🥳
+</div>
 
 
-        </div>
+
+<!-- ============================= -->
+<!-- WHATSAPP -->
+<!-- ============================= -->
 
 
-    </div>
+<div
+class="aparecer"
+style="animation-delay:2.1s">
 
+
+<a
+
+class="boton"
+
+href="https://wa.me/529932424071?text=%C2%A1Hola%20Tincho!%20%F0%9F%8E%89%0A%0AConfirmo%20mi%20asistencia%20a%20tu%20fiesta%20de%2044%20a%C3%B1os%20%F0%9F%A5%B3%F0%9F%8E%82%0A%0A%C2%A1Nos%20vemos%20el%2026%20de%20septiembre!%20%F0%9F%8E%8A"
+
+target="_blank">
+
+💬 CONFIRMAR MI ASISTENCIA
+
+</a>
+
+
+</div>
+
+
+
+<div class="final">
+
+🥂✨
+
+<br><br>
+
+¡44 años!
+
+<br><br>
+
+Y todavía quedan
+
+muchísimas aventuras
+
+por vivir.
+
+✈️🌎
+
+<br><br>
+
+¡NOS VEMOS EN LA FIESTA!
+
+🎉🎂🍻
+
+</div>
+
+
+</div>
+
+
+
+<!-- ============================= -->
+<!-- YOUTUBE OCULTO -->
+<!-- ============================= -->
+
+
+<div
+id="youtubePlayer"
+style="
+position:fixed;
+bottom:20px;
+right:20px;
+width:1px;
+height:1px;
+opacity:0;
+pointer-events:none;
+">
 
 </div>
 
@@ -2172,531 +1238,510 @@ id="musicModal">
 <script>
 
 
-/* ========================================
-   FECHA DEL EVENTO
-======================================== */
+/* ============================= */
+/* CUENTA REGRESIVA */
+/* ============================= */
 
-const eventDate = new Date(
 
-    2026,
+const fechaFiesta =
 
-    8,
+new Date(
 
-    26,
+"September 26, 2026 19:30:00"
 
-    19,
+).getTime();
 
-    30,
 
-    0
+
+function actualizarContador() {
+
+
+const ahora =
+
+new Date().getTime();
+
+
+const diferencia =
+
+fechaFiesta - ahora;
+
+
+if (
+
+diferencia <= 0
+
+) {
+
+
+document.getElementById("dias")
+.innerHTML = "0";
+
+
+document.getElementById("horas")
+.innerHTML = "0";
+
+
+document.getElementById("minutos")
+.innerHTML = "0";
+
+
+document.getElementById("segundos")
+.innerHTML = "0";
+
+
+return;
+
+}
+
+
+const dias =
+
+Math.floor(
+
+diferencia /
+
+(1000 * 60 * 60 * 24)
+
+);
+
+
+const horas =
+
+Math.floor(
+
+(
+
+diferencia %
+
+(1000 * 60 * 60 * 24)
+
+)
+
+/
+
+(1000 * 60 * 60)
+
+);
+
+
+const minutos =
+
+Math.floor(
+
+(
+
+diferencia %
+
+(1000 * 60 * 60)
+
+)
+
+/
+
+(1000 * 60)
+
+);
+
+
+const segundos =
+
+Math.floor(
+
+(
+
+diferencia %
+
+(1000 * 60)
+
+)
+
+/
+
+1000
 
 );
 
 
 
+document.getElementById("dias")
+.innerHTML = dias;
 
-/* ========================================
-   CONTADOR
-======================================== */
 
-function updateCountdown() {
+document.getElementById("horas")
+.innerHTML = horas;
 
 
-    const now = new Date();
+document.getElementById("minutos")
+.innerHTML = minutos;
 
 
-    const difference =
-        eventDate - now;
-
-
-    if (difference <= 0) {
-
-
-        document
-        .getElementById("days")
-        .textContent = "00";
-
-
-        document
-        .getElementById("hours")
-        .textContent = "00";
-
-
-        document
-        .getElementById("minutes")
-        .textContent = "00";
-
-
-        document
-        .getElementById("seconds")
-        .textContent = "00";
-
-
-        return;
-
-    }
-
-
-
-    const days =
-
-        Math.floor(
-
-            difference /
-
-            (
-                1000 *
-                60 *
-                60 *
-                24
-            )
-
-        );
-
-
-
-    const hours =
-
-        Math.floor(
-
-            (
-
-                difference %
-
-                (
-                    1000 *
-                    60 *
-                    60 *
-                    24
-                )
-
-            )
-
-            /
-
-            (
-                1000 *
-                60 *
-                60
-            )
-
-        );
-
-
-
-    const minutes =
-
-        Math.floor(
-
-            (
-
-                difference %
-
-                (
-                    1000 *
-                    60 *
-                    60
-                )
-
-            )
-
-            /
-
-            (
-                1000 *
-                60
-            )
-
-        );
-
-
-
-    const seconds =
-
-        Math.floor(
-
-            (
-
-                difference %
-
-                (
-                    1000 *
-                    60
-                )
-
-            )
-
-            /
-
-            1000
-
-        );
-
-
-
-    document
-    .getElementById("days")
-    .textContent =
-
-        String(days)
-        .padStart(2, "0");
-
-
-
-    document
-    .getElementById("hours")
-    .textContent =
-
-        String(hours)
-        .padStart(2, "0");
-
-
-
-    document
-    .getElementById("minutes")
-    .textContent =
-
-        String(minutes)
-        .padStart(2, "0");
-
-
-
-    document
-    .getElementById("seconds")
-    .textContent =
-
-        String(seconds)
-        .padStart(2, "0");
+document.getElementById("segundos")
+.innerHTML = segundos;
 
 
 }
 
 
-updateCountdown();
+actualizarContador();
 
 
 setInterval(
 
-    updateCountdown,
+actualizarContador,
 
-    1000
-
-);
-
-
-
-
-/* ========================================
-   ANIMACIONES
-======================================== */
-
-const fadeElements =
-
-    document
-    .querySelectorAll(".fade");
-
-
-
-const observer =
-
-    new IntersectionObserver(
-
-        function(entries) {
-
-
-            entries.forEach(
-
-                function(entry) {
-
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-
-                        entry.target
-                        .classList
-                        .add("show");
-
-
-                    }
-
-
-                }
-
-            );
-
-
-        },
-
-
-        {
-
-            threshold: 0.1
-
-        }
-
-    );
-
-
-
-fadeElements.forEach(
-
-    function(element) {
-
-
-        observer
-        .observe(element);
-
-
-    }
+1000
 
 );
 
 
 
-/* MOSTRAR PORTADA */
+/* ============================= */
+/* PARTÍCULAS DORADAS */
+/* ============================= */
+
+
+function crearParticula() {
+
+
+const particula =
+
+document.createElement("div");
+
+
+particula.className =
+
+"particula";
+
+
+particula.style.left =
+
+Math.random() * 100 + "vw";
+
+
+particula.style.animationDuration =
+
+(
+
+6 +
+
+Math.random() * 8
+
+)
+
++
+
+"s";
+
+
+particula.style.animationDelay =
+
+Math.random() * 2
+
++
+
+"s";
+
+
+document.body.appendChild(
+
+particula
+
+);
+
 
 setTimeout(
 
-    function() {
+function() {
 
+particula.remove();
 
-        const first =
+},
 
-            document
-            .querySelector(".fade");
-
-
-        if (first) {
-
-
-            first
-            .classList
-            .add("show");
-
-
-        }
-
-
-    },
-
-
-    300
+15000
 
 );
-
-
-
-
-/* ========================================
-   DATOS BANCARIOS
-======================================== */
-
-function toggleGift() {
-
-
-    const content =
-
-        document
-        .getElementById(
-            "giftContent"
-        );
-
-
-    content
-    .classList
-    .toggle("open");
 
 
 }
 
 
+setInterval(
 
+crearParticula,
 
-/* ========================================
-   COPIAR TARJETA
-======================================== */
-
-function copyCard() {
-
-
-    const number =
-
-        "4152313720141337";
-
-
-    if (
-        navigator.clipboard
-    ) {
-
-
-        navigator.clipboard
-        .writeText(number)
-        .then(
-
-
-            function() {
-
-
-                alert(
-                    "✅ Número de tarjeta copiado"
-                );
-
-
-            }
-
-        );
-
-
-    }
-
-    else {
-
-
-        alert(
-
-            "Número de tarjeta: " +
-
-            number
-
-        );
-
-
-    }
-
-
-}
-
-
-
-
-/* ========================================
-   WHATSAPP
-======================================== */
-
-document
-.getElementById("whatsappButton")
-.addEventListener(
-
-
-    "click",
-
-
-    function(event) {
-
-
-        event.preventDefault();
-
-
-        const phone =
-
-            "529932424071";
-
-
-        const message =
-
-            "¡Hola Tincho! 🎉🥳\n\n" +
-
-            "Confirmo mi asistencia " +
-
-            "a tu fiesta de 44 años. 🎂\n\n" +
-
-            "👤 Mi nombre es: \n\n" +
-
-            "👥 Número de personas: \n\n" +
-
-            "¡Nos vemos para celebrar contigo! ✨";
-
-
-
-        const url =
-
-            "https://wa.me/" +
-
-            phone +
-
-            "?text=" +
-
-            encodeURIComponent(
-                message
-            );
-
-
-        window.open(
-
-            url,
-
-            "_blank"
-
-        );
-
-
-    }
+500
 
 );
 
 
 
-
-/* ========================================
-   MÚSICA
-======================================== */
-
-function toggleMusic() {
+/* ============================= */
+/* CONFETI */
+/* ============================= */
 
 
-    const modal =
-
-        document
-        .getElementById(
-            "musicModal"
-        );
+function crearConfeti() {
 
 
-    const player =
+const colores = [
 
-        document
-        .getElementById(
-            "youtubePlayer"
-        );
+"#f6c94c",
 
+"#ffffff",
 
+"#d4a72c",
 
-    if (
+"#ffdf70"
 
-        modal
-        .classList
-        .contains("show")
-
-    ) {
+];
 
 
-        modal
-        .classList
-        .remove("show");
+for (
+
+let i = 0;
+
+i < 35;
+
+i++
+
+) {
 
 
-        player.src = "";
+const confeti =
+
+document.createElement("div");
 
 
-    }
+confeti.className =
+
+"confeti";
 
 
-    else {
+confeti.style.left =
+
+Math.random() * 100
+
++
+
+"vw";
 
 
-        modal
-        .classList
-        .add("show");
+confeti.style.background =
+
+colores[
+
+Math.floor(
+
+Math.random()
+
+*
+
+colores.length
+
+)
+
+];
 
 
-        player.src =
+confeti.style.animationDuration =
 
-            "https://www.youtube.com/embed/XmIgg9De9hY?autoplay=1&rel=0";
+(
+
+3 +
+
+Math.random() * 3
+
+)
+
++
+
+"s";
 
 
-    }
+confeti.style.transform =
+
+"rotate("
+
++
+
+Math.random() * 360
+
++
+
+"deg)";
+
+
+document.body.appendChild(
+
+confeti
+
+);
+
+
+setTimeout(
+
+function() {
+
+confeti.remove();
+
+},
+
+6000
+
+);
+
+
+}
+
+
+}
+
+
+window.addEventListener(
+
+"load",
+
+function() {
+
+
+crearConfeti();
+
+
+setTimeout(
+
+crearConfeti,
+
+1500
+
+);
+
+
+}
+
+);
+
+
+
+/* ============================= */
+/* MÚSICA */
+/* ============================= */
+
+
+let musicaActiva = false;
+
+
+function reproducirMusica() {
+
+
+const contenedor =
+
+document.getElementById(
+
+"youtubePlayer"
+
+);
+
+
+if (
+
+!musicaActiva
+
+) {
+
+
+contenedor.innerHTML =
+
+'<iframe '
+
++
+
+'width="300" '
+
++
+
+'height="170" '
+
++
+
+'src="https://www.youtube.com/embed/UtF6Jej8yb4?autoplay=1&rel=0" '
+
++
+
+'title="Avicii - The Nights" '
+
++
+
+'frameborder="0" '
+
++
+
+'allow="autoplay; encrypted-media" '
+
++
+
+'allowfullscreen>'
+
++
+
+'</iframe>';
+
+
+contenedor.style.width =
+
+"300px";
+
+
+contenedor.style.height =
+
+"170px";
+
+
+contenedor.style.opacity =
+
+"1";
+
+
+contenedor.style.pointerEvents =
+
+"auto";
+
+
+musicaActiva = true;
+
+
+}
+
+
+else {
+
+
+contenedor.innerHTML = "";
+
+
+contenedor.style.width =
+
+"1px";
+
+
+contenedor.style.height =
+
+"1px";
+
+
+contenedor.style.opacity =
+
+"0";
+
+
+contenedor.style.pointerEvents =
+
+"none";
+
+
+musicaActiva = false;
+
+
+}
 
 
 }
@@ -2706,5 +1751,6 @@ function toggleMusic() {
 
 
 </body>
+
 
 </html>
