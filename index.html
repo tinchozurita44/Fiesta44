@@ -2,410 +2,594 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tincho Zurita | 44 Años</title>
+<title>🎉 Tincho Zurita | 44 Años</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    background:#080808;
-    color:white;
-    font-family:Arial,Helvetica,sans-serif;
-    overflow-x:hidden;
+body {
+    background: #08090b;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
 }
+
 
 /* =========================
-FONDO CON PARTICULAS
+   FONDO
 ========================= */
 
-#particles{
-    position:fixed;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-    overflow:hidden;
-}
-
-.particle{
-    position:absolute;
-    bottom:-30px;
-    background:#e6bd3d;
-    border-radius:50%;
-    box-shadow:0 0 15px #e6bd3d;
-    animation:particleMove linear infinite;
-}
-
-@keyframes particleMove{
-    0%{
-        transform:translateY(0) scale(1);
-        opacity:0;
-    }
-
-    15%{
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(-120vh) translateX(80px) scale(.3);
-        opacity:0;
-    }
-}
-
-/* =========================
-INTRO CINEMATOGRAFICO
-========================= */
-
-.intro{
-    position:relative;
-    z-index:5;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:30px;
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
     background:
-    radial-gradient(circle at center,
-    rgba(230,189,61,.18),
-    transparent 45%);
+        radial-gradient(circle at 50% 20%, rgba(215,170,45,.18), transparent 25%),
+        radial-gradient(circle at 20% 70%, rgba(215,170,45,.08), transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(215,170,45,.08), transparent 25%);
+    pointer-events: none;
+    z-index: -1;
 }
 
-.intro-text{
-    color:#e6d3a3;
-    font-size:20px;
-    letter-spacing:4px;
-    line-height:1.8;
-    opacity:0;
-    animation:introText 2s ease forwards;
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 20px 70px;
 }
 
-.intro-name{
-    margin-top:40px;
-    font-size:60px;
-    font-weight:bold;
-    color:#e6bd3d;
-    line-height:.9;
-    opacity:0;
-    transform:scale(.5);
-    animation:introName 1.5s ease forwards;
-    animation-delay:2s;
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+.particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #e7bd48;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #e7bd48;
+    animation: float 8s infinite ease-in-out;
+    opacity: .7;
+    pointer-events: none;
 }
 
-.intro-age{
-    margin-top:35px;
-    font-size:180px;
-    font-weight:bold;
-    color:#e6bd3d;
-    opacity:0;
-    transform:scale(.2);
+.p1 {
+    top: 15%;
+    left: 8%;
+}
+
+.p2 {
+    top: 30%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.p3 {
+    top: 55%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+.p4 {
+    top: 75%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+.p5 {
+    top: 88%;
+    left: 45%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: .3;
+    }
+
+    50% {
+        transform: translateY(-35px) scale(1.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: .3;
+    }
+}
+
+
+/* =========================
+   ANIMACIONES
+========================= */
+
+.fade {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 1s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    padding: 35px 10px 45px;
+}
+
+.subtitle {
+    color: #d9cda8;
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.name {
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #e6b93f;
     text-shadow:
-    0 0 20px #e6bd3d,
-    0 0 70px rgba(230,189,61,.7);
-    animation:introAge 1.3s ease forwards,
-    agePulse 1.5s infinite alternate;
-    animation-delay:3.5s,4.8s;
+        0 0 15px rgba(230,185,63,.4),
+        0 0 40px rgba(230,185,63,.2);
+    animation: glow 3s infinite alternate;
 }
 
-.intro-years{
-    color:#e6bd3d;
-    font-size:35px;
-    letter-spacing:8px;
-    opacity:0;
-    animation:fadeUp 1s ease forwards;
-    animation-delay:4.5s;
-}
+@keyframes glow {
 
-.discover{
-    margin-top:45px;
-    padding:18px 30px;
-    background:#e6bd3d;
-    color:#080808;
-    border:none;
-    border-radius:50px;
-    font-weight:bold;
-    font-size:17px;
-    letter-spacing:2px;
-    cursor:pointer;
-    opacity:0;
-    animation:fadeUp 1s ease forwards;
-    animation-delay:5.5s;
-    box-shadow:0 0 30px rgba(230,189,61,.6);
-}
-
-/* INTRO ANIMACIONES */
-
-@keyframes introText{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes introName{
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-@keyframes introAge{
-    0%{
-        opacity:0;
-        transform:scale(.2) rotate(-20deg);
-    }
-
-    70%{
-        opacity:1;
-        transform:scale(1.15) rotate(5deg);
-    }
-
-    100%{
-        opacity:1;
-        transform:scale(1);
-    }
-}
-
-@keyframes agePulse{
-    from{
+    from {
         text-shadow:
-        0 0 20px #e6bd3d;
+        0 0 10px rgba(230,185,63,.3);
     }
 
-    to{
+    to {
         text-shadow:
-        0 0 40px #e6bd3d,
-        0 0 100px #e6bd3d;
+        0 0 25px rgba(230,185,63,.8),
+        0 0 60px rgba(230,185,63,.3);
     }
 }
 
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+.years-title {
+    margin-top: 30px;
+    color: #dddddd;
+    font-size: 22px;
+    letter-spacing: 10px;
 }
+
+.years {
+    font-size: 160px;
+    font-weight: bold;
+    color: #e6b93f;
+    line-height: 1;
+    margin: 15px 0;
+    text-shadow: 0 0 35px rgba(230,185,63,.4);
+}
+
+.anos {
+    color: #e6b93f;
+    font-size: 48px;
+    font-weight: 300;
+}
+
+.line {
+    width: 55%;
+    height: 2px;
+    background: #d4aa3c;
+    margin: 55px auto;
+}
+
 
 /* =========================
-INVITACION
+   TEXTO INTRO
 ========================= */
 
-.container{
-    position:relative;
-    z-index:2;
-    max-width:700px;
-    margin:auto;
-    padding:60px 25px;
-    text-align:center;
+.intro {
+    font-size: 25px;
+    line-height: 1.7;
+    color: #dddddd;
 }
 
-.section{
-    margin-bottom:80px;
-    opacity:0;
-    transform:translateY(50px);
-    transition:1s ease;
+.intro strong {
+    color: #e6b93f;
 }
 
-.section.show{
-    opacity:1;
-    transform:translateY(0);
-}
 
 /* =========================
-TITULOS
+   SECCIÓN
 ========================= */
 
-.title{
-    color:#e6bd3d;
-    font-size:26px;
-    letter-spacing:4px;
-    margin-bottom:30px;
+.section {
+    margin-top: 80px;
 }
+
+.section-title {
+    color: #e6b93f;
+    font-size: 25px;
+    letter-spacing: 6px;
+    margin-bottom: 35px;
+}
+
+.section-text {
+    color: #dddddd;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
 
 /* =========================
-TARJETAS
+   CONTADOR
 ========================= */
 
-.card{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(230,189,61,.4);
-    border-radius:22px;
-    padding:30px 20px;
-    margin:20px auto;
-    box-shadow:0 0 30px rgba(230,189,61,.08);
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 35px;
 }
 
-.card h3{
-    color:#e6bd3d;
-    margin-bottom:12px;
+.time-box {
+    border: 2px solid rgba(230,185,63,.45);
+    border-radius: 25px;
+    padding: 28px 8px;
+    background: rgba(255,255,255,.02);
+    box-shadow:
+        0 0 25px rgba(230,185,63,.08);
 }
 
-.card p{
-    font-size:20px;
-    line-height:1.6;
+.time-number {
+    font-size: 48px;
+    font-weight: bold;
+    color: #e6b93f;
 }
+
+.time-label {
+    color: #cccccc;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-top: 12px;
+}
+
 
 /* =========================
-CUENTA REGRESIVA
+   TARJETAS
 ========================= */
 
-.countdown{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
+.card {
+    margin-top: 28px;
+    border: 1px solid rgba(230,185,63,.45);
+    border-radius: 30px;
+    padding: 40px 25px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.01)
+        );
+    box-shadow:
+        0 0 35px rgba(0,0,0,.5);
 }
 
-.time{
-    width:75px;
-    padding:18px 5px;
-    border:1px solid #e6bd3d;
-    border-radius:15px;
-    background:rgba(230,189,61,.08);
+.card-icon {
+    font-size: 55px;
+    margin-bottom: 18px;
 }
 
-.time span{
-    display:block;
-    font-size:28px;
-    font-weight:bold;
-    color:#e6bd3d;
+.card-small-title {
+    color: #e6b93f;
+    letter-spacing: 6px;
+    font-size: 17px;
+    margin-bottom: 18px;
 }
 
-.time small{
-    font-size:10px;
-    color:#cccccc;
+.card-big-text {
+    font-size: 31px;
+    color: #ffffff;
+    line-height: 1.4;
 }
+
+.card-subtext {
+    color: #cfcfcf;
+    margin-top: 15px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
 
 /* =========================
-VESTIMENTA
+   VESTIMENTA
 ========================= */
 
-.dress{
-    font-size:21px;
-    line-height:1.8;
+.dress-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
 }
 
-.dress strong{
-    color:#e6bd3d;
+.dress-card {
+    border: 1px solid rgba(230,185,63,.4);
+    border-radius: 25px;
+    padding: 30px 15px;
+    background: rgba(255,255,255,.02);
 }
+
+.dress-card h3 {
+    color: #e6b93f;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.dress-card p {
+    color: #dddddd;
+    line-height: 1.6;
+    font-size: 17px;
+}
+
 
 /* =========================
-BOTON WHATSAPP
+   VIAJE
 ========================= */
 
-.whatsapp{
-    display:inline-block;
-    margin-top:25px;
-    padding:20px 30px;
-    background:#e6bd3d;
-    color:#080808;
-    border-radius:50px;
-    text-decoration:none;
-    font-size:17px;
-    font-weight:bold;
-    box-shadow:0 0 30px rgba(230,189,61,.6);
-    animation:buttonPulse 2s infinite;
+.travel-card {
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes buttonPulse{
-    0%{
-        transform:scale(1);
+.plane {
+    font-size: 45px;
+    display: inline-block;
+    margin-bottom: 20px;
+    animation: plane 4s infinite ease-in-out;
+}
+
+@keyframes plane {
+
+    0% {
+        transform: translateX(-20px) rotate(-10deg);
     }
 
-    50%{
-        transform:scale(1.06);
+    50% {
+        transform: translateX(20px) translateY(-10px) rotate(5deg);
     }
 
-    100%{
-        transform:scale(1);
+    100% {
+        transform: translateX(-20px) rotate(-10deg);
     }
 }
+
+.travel-title {
+    color: #e6b93f;
+    font-size: 24px;
+    letter-spacing: 4px;
+    line-height: 1.5;
+}
+
+.travel-text {
+    margin-top: 25px;
+    font-size: 19px;
+    line-height: 1.8;
+    color: #dddddd;
+}
+
+.travel-highlight {
+    color: #e6b93f;
+    font-size: 22px;
+    font-weight: bold;
+}
+
 
 /* =========================
-CONFETI
+   DATOS BANCARIOS
 ========================= */
 
-.confetti{
-    position:fixed;
-    top:-20px;
-    width:12px;
-    height:12px;
-    z-index:20;
-    pointer-events:none;
-    animation:confettiFall linear forwards;
+.gift-box {
+    margin-top: 30px;
+    border: 1px solid rgba(230,185,63,.45);
+    border-radius: 25px;
+    overflow: hidden;
 }
 
-@keyframes confettiFall{
+.gift-header {
+    padding: 25px;
+    cursor: pointer;
+    background: rgba(230,185,63,.08);
+    font-size: 20px;
+    color: #e6b93f;
+}
 
-    0%{
-        transform:translateY(-20px) rotate(0deg);
-        opacity:1;
+.gift-content {
+    display: none;
+    padding: 30px 20px;
+    animation: openGift .5s ease;
+}
+
+.gift-content.open {
+    display: block;
+}
+
+@keyframes openGift {
+
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
 
-    100%{
-        transform:
-        translateY(110vh)
-        rotate(1080deg);
-        opacity:0;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
+
+.bank {
+    color: #e6b93f;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.bank-name {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.card-number {
+    color: #e6b93f;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 20px 0;
+    word-break: break-word;
+}
+
 
 /* =========================
-FOOTER
+   BOTONES
 ========================= */
 
-.footer{
-    margin-top:70px;
-    color:#e6bd3d;
-    font-size:20px;
-    letter-spacing:3px;
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 18px 28px;
+    border-radius: 50px;
+    border: 1px solid #e6b93f;
+    background: transparent;
+    color: #e6b93f;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .3s;
 }
 
+.button:hover,
+.button:active {
+    background: #e6b93f;
+    color: #08090b;
+    transform: scale(1.05);
+}
+
+.whatsapp {
+    background: #e6b93f;
+    color: #08090b;
+    font-size: 18px;
+    padding: 20px 30px;
+    box-shadow:
+        0 0 30px rgba(230,185,63,.25);
+}
+
+
 /* =========================
-CELULAR
+   FINAL
 ========================= */
 
-@media(max-width:600px){
+.final {
+    margin-top: 80px;
+    padding: 35px 15px;
+}
 
-    .intro-text{
-        font-size:16px;
-        letter-spacing:3px;
+.final-text {
+    color: #e6b93f;
+    font-size: 24px;
+    line-height: 1.7;
+}
+
+.footer {
+    margin-top: 70px;
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 30px 16px 60px;
     }
 
-    .intro-name{
-        font-size:48px;
+    .subtitle {
+        font-size: 16px;
+        letter-spacing: 3px;
     }
 
-    .intro-age{
-        font-size:145px;
+    .name {
+        font-size: 58px;
     }
 
-    .container{
-        padding:50px 20px;
+    .years {
+        font-size: 125px;
     }
 
-    .title{
-        font-size:22px;
+    .anos {
+        font-size: 40px;
     }
 
-    .card p{
-        font-size:18px;
+    .countdown {
+        gap: 8px;
+    }
+
+    .time-box {
+        padding: 22px 4px;
+        border-radius: 20px;
+    }
+
+    .time-number {
+        font-size: 35px;
+    }
+
+    .time-label {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .dress-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-big-text {
+        font-size: 26px;
+    }
+
+    .section-title {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .card-number {
+        font-size: 20px;
+        letter-spacing: 2px;
     }
 
 }
@@ -413,445 +597,502 @@ CELULAR
 </style>
 </head>
 
+
 <body>
 
-<div id="particles"></div>
 
-<!-- INTRO -->
-
-<section class="intro">
-
-<div class="intro-text">
-HAY HISTORIAS QUE MERECEN CELEBRARSE...<br>
-Y ESTA ES UNA DE ELLAS.
-</div>
-
-<div class="intro-name">
-TINCHO<br>
-ZURITA
-</div>
-
-<div class="intro-age">
-44
-</div>
-
-<div class="intro-years">
-AÑOS
-</div>
-
-<button class="discover" onclick="discoverParty()">
-🎉 DESCUBRIR LA INVITACIÓN
-</button>
-
-</section>
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
 
 
-<!-- INVITACION -->
+<div class="container">
 
-<div class="container" id="invitation">
 
-<!-- MENSAJE -->
+<!-- PORTADA -->
 
-<div class="section">
+<div class="hero fade">
 
-<h2 class="title">
-🎉 ¡VAMOS A CELEBRAR!
-</h2>
+    <div class="subtitle">
+        HAY HISTORIAS QUE MERECEN<br>
+        CELEBRARSE...<br>
+        Y ESTA ES UNA DE ELLAS.
+    </div>
 
-<div class="card">
+    <div class="name">
+        TINCHO<br>
+        ZURITA
+    </div>
 
-<p>
-Porque <strong style="color:#e6bd3d;">44 no se cumplen todos los días</strong>,
-esto hay que celebrarlo como se debe.
-</p>
+    <div class="years-title">
+        CUMPLE
+    </div>
 
-</div>
+    <div class="years">
+        44
+    </div>
+
+    <div class="anos">
+        Años
+    </div>
+
+    <div class="line"></div>
+
+    <div class="intro">
+        Porque <strong>44 no se cumplen todos los días</strong>,<br>
+        esto hay que celebrarlo como se debe.
+    </div>
 
 </div>
 
 
-<!-- CUENTA -->
 
-<div class="section">
+<!-- CONTADOR -->
 
-<h2 class="title">
-⏳ LA FIESTA COMIENZA EN
-</h2>
+<div class="section fade">
 
-<div class="countdown">
+    <div class="section-title">
+        ⌛ LA FIESTA COMIENZA EN ⌛
+    </div>
 
-<div class="time">
-<span id="days">00</span>
-<small>DÍAS</small>
+    <div class="countdown">
+
+        <div class="time-box">
+            <div class="time-number" id="days">00</div>
+            <div class="time-label">DÍAS</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="hours">00</div>
+            <div class="time-label">HORAS</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="minutes">00</div>
+            <div class="time-label">MINUTOS</div>
+        </div>
+
+        <div class="time-box">
+            <div class="time-number" id="seconds">00</div>
+            <div class="time-label">SEGUNDOS</div>
+        </div>
+
+    </div>
+
 </div>
 
-<div class="time">
-<span id="hours">00</span>
-<small>HORAS</small>
-</div>
 
-<div class="time">
-<span id="minutes">00</span>
-<small>MIN</small>
-</div>
 
-<div class="time">
-<span id="seconds">00</span>
-<small>SEG</small>
-</div>
+<!-- PREPÁRATE -->
 
-</div>
+<div class="section fade">
+
+    <div class="section-title">
+        🥂 PREPÁRATE PARA CELEBRAR 🥂
+    </div>
+
+    <div class="section-text">
+        Una noche para reír, brindar,<br>
+        bailar y crear nuevos recuerdos.
+    </div>
 
 </div>
+
 
 
 <!-- FECHA -->
 
-<div class="section">
+<div class="section fade">
 
-<h2 class="title">
-📅 CUÁNDO
-</h2>
+    <div class="card">
 
-<div class="card">
+        <div class="card-icon">
+            📅
+        </div>
 
-<h3>
-26 DE SEPTIEMBRE
-</h3>
+        <div class="card-small-title">
+            FECHA
+        </div>
 
-<p>
-🕢 7:30 PM
-</p>
+        <div class="card-big-text">
+            26 DE SEPTIEMBRE
+        </div>
+
+    </div>
 
 </div>
 
+
+
+<!-- HORA -->
+
+<div class="section fade">
+
+    <div class="card">
+
+        <div class="card-icon">
+            🕢
+        </div>
+
+        <div class="card-small-title">
+            HORA
+        </div>
+
+        <div class="card-big-text">
+            7:30 PM
+        </div>
+
+    </div>
+
 </div>
+
 
 
 <!-- LUGAR -->
 
-<div class="section">
+<div class="section fade">
 
-<h2 class="title">
-📍 DÓNDE
-</h2>
+    <div class="card">
 
-<div class="card">
+        <div class="card-icon">
+            📍
+        </div>
 
-<h3>
-PALAPA LA CARRETA
-</h3>
+        <div class="card-small-title">
+            LUGAR
+        </div>
 
-<p>
-Fraccionamiento Jalapa
-</p>
+        <div class="card-big-text">
+            PALAPA LA CARRETA
+        </div>
+
+        <div class="card-subtext">
+            Fraccionamiento Jalapa
+        </div>
+
+    </div>
 
 </div>
 
-</div>
 
 
 <!-- VESTIMENTA -->
 
-<div class="section">
+<div class="section fade">
 
-<h2 class="title">
-👔 CÓDIGO DE VESTIMENTA
-</h2>
+    <div class="section-title">
+        👔 CÓDIGO DE VESTIMENTA
+    </div>
 
-<div class="card dress">
+    <div class="dress-grid">
 
-<strong>HOMBRES</strong>
+        <div class="dress-card">
 
-<br>
+            <h3>HOMBRES</h3>
 
-Guayabera + pantalón negro o caqui
+            <p>
+                Guayabera<br>
+                +<br>
+                Pantalón negro o caqui
+            </p>
 
-<br><br>
-
-<strong>MUJERES</strong>
-
-<br>
-
-Vestido casual de noche
-
-</div>
-
-</div>
+        </div>
 
 
-<!-- MENSAJE -->
+        <div class="dress-card">
 
-<div class="section">
+            <h3>MUJERES</h3>
 
-<div class="card">
+            <p>
+                Vestido casual<br>
+                de noche
+            </p>
 
-<p style="font-size:22px;line-height:1.7;">
+        </div>
 
-✨ Lo importante es venir cómodo y listo para divertirte y celebrar conmigo! 🎉
-
-</p>
-
-</div>
+    </div>
 
 </div>
 
 
-<!-- WHATSAPP -->
 
-<div class="section">
+<!-- VIAJE -->
 
-<h2 class="title">
-📲 CONFIRMA TU ASISTENCIA
-</h2>
+<div class="section fade">
 
-<a
-class="whatsapp"
-href="https://wa.me/5219932424071?text=%F0%9F%8E%89%20%C2%A1Hola%2C%20Tincho!%0A%0AConfirmo%20mi%20asistencia%20para%20celebrar%20tus%2044%20a%C3%B1os%20%F0%9F%A5%B3%F0%9F%8E%82%0A%0A%F0%9F%91%A4%20Mi%20nombre%20es%3A%20%0A%F0%9F%91%A5%20N%C3%BAmero%20de%20personas%3A%20"
-target="_blank">
+    <div class="card travel-card">
 
-💬 CONFIRMAR POR WHATSAPP
+        <div class="plane">
+            ✈️
+        </div>
 
-</a>
+        <div class="travel-title">
+            UN PEQUEÑO IMPULSO<br>
+            PARA MI PRÓXIMA AVENTURA
+        </div>
+
+        <div class="travel-text">
+
+            Tu presencia es el mejor regalo<br>
+            que puedo recibir. ❤️
+
+            <br><br>
+
+            Pero si quieres tener un pequeño detalle conmigo
+            y ayudarme a seguir haciendo una de las cosas
+            que más amo...
+
+            <br><br>
+
+            <span class="travel-highlight">
+                ✈️ VIAJAR Y CONOCER EL MUNDO 🌎
+            </span>
+
+            <br><br>
+
+            😅 Cualquier aportación para mi próxima aventura
+            será recibida con muchísimo cariño.
+
+        </div>
+
+    </div>
 
 </div>
+
+
+
+<!-- SOBRES -->
+
+<div class="section fade">
+
+    <div class="card">
+
+        <div class="card-icon">
+            💌
+        </div>
+
+        <div class="card-small-title">
+            SOBRES
+        </div>
+
+        <div class="card-subtext">
+            Habrá sobres disponibles<br>
+            durante la fiesta.
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- BANCO -->
+
+<div class="section fade">
+
+    <div class="gift-box">
+
+        <div class="gift-header" onclick="toggleGift()">
+
+            ✈️ ¿QUIERES APOYAR MI PRÓXIMA AVENTURA?<br><br>
+
+            💳 TOCA AQUÍ PARA VER LOS DATOS
+
+        </div>
+
+
+        <div class="gift-content" id="giftContent">
+
+            <div class="bank">
+                BBVA
+            </div>
+
+            <div class="bank-name">
+                👤 Agustín Armando Zurita
+            </div>
+
+            <div class="card-small-title">
+                NÚMERO DE TARJETA
+            </div>
+
+            <div class="card-number" id="cardNumber">
+                4152 3137 2014 1337
+            </div>
+
+
+            <button class="button" onclick="copyCard()">
+
+                📋 COPIAR NÚMERO DE TARJETA
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- DESTINO -->
+
+<div class="section fade">
+
+    <div class="card">
+
+        <div class="card-icon">
+            🌎
+        </div>
+
+        <div class="section-title">
+            PRÓXIMO DESTINO...
+        </div>
+
+        <div class="card-big-text">
+            POR DESCUBRIR ✨
+        </div>
+
+        <div class="card-subtext">
+            Gracias por ayudarme a seguir
+            coleccionando recuerdos alrededor del mundo. ❤️✈️
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- FINAL -->
+
+<div class="final fade">
+
+    <div class="final-text">
+
+        ✨ Lo importante es venir cómodo,<br>
+        listo para divertirte<br>
+        y celebrar conmigo! 🥳✨
+
+    </div>
+
+
+    <a
+    class="button whatsapp"
+    id="whatsappButton"
+    href="#">
+
+        🎉 CONFIRMAR ASISTENCIA
+
+    </a>
+
+
+</div>
+
 
 
 <div class="footer">
 
-🥳 NOS VEMOS EN LA FIESTA 🥳
-
-<br><br>
-
-TINCHO ZURITA
-
-<br>
-
-44 AÑOS
+    TINCHO ZURITA • 44 AÑOS 🥳
 
 </div>
 
+
 </div>
+
 
 
 <script>
 
+
 /* =========================
-PARTICULAS
+   FECHA DEL EVENTO
 ========================= */
 
-const particleContainer =
-document.getElementById("particles");
-
-for(let i=0;i<30;i++){
-
-const particle =
-document.createElement("div");
-
-particle.className="particle";
-
-particle.style.left=
-Math.random()*100+"%";
-
-const size=
-Math.random()*6+3;
-
-particle.style.width=
-size+"px";
-
-particle.style.height=
-size+"px";
-
-particle.style.animationDuration=
-Math.random()*8+6+"s";
-
-particle.style.animationDelay=
-Math.random()*8+"s";
-
-particleContainer.appendChild(
-particle
+const eventDate = new Date(
+    2026,
+    8,
+    26,
+    19,
+    30,
+    0
 );
-
-}
 
 
 /* =========================
-CONFETI
+   CONTADOR
 ========================= */
 
-function explodeConfetti(){
+function updateCountdown() {
 
-for(let i=0;i<120;i++){
+    const now = new Date();
 
-const confetti=
-document.createElement("div");
-
-confetti.className=
-"confetti";
-
-confetti.style.left=
-Math.random()*100+"vw";
-
-const colors=[
-"#e6bd3d",
-"#ffffff",
-"#d4af37",
-"#ffcc00"
-];
-
-confetti.style.background=
-colors[
-Math.floor(
-Math.random()*colors.length
-)
-];
-
-confetti.style.animationDuration=
-Math.random()*3+3+"s";
-
-document.body.appendChild(
-confetti
-);
-
-setTimeout(()=>{
-
-confetti.remove();
-
-},7000);
-
-}
-
-}
+    const difference = eventDate - now;
 
 
-/* =========================
-DESCUBRIR
-========================= */
+    if (difference <= 0) {
 
-function discoverParty(){
+        document.getElementById("days").textContent = "00";
 
-explodeConfetti();
+        document.getElementById("hours").textContent = "00";
 
-document
-.getElementById("invitation")
-.scrollIntoView({
-behavior:"smooth"
-});
+        document.getElementById("minutes").textContent = "00";
 
-}
+        document.getElementById("seconds").textContent = "00";
+
+        return;
+    }
 
 
-/* =========================
-SCROLL ANIMATIONS
-========================= */
-
-const sections=
-document.querySelectorAll(".section");
-
-const observer=
-new IntersectionObserver(
-
-(entries)=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.classList.add(
-"show"
-);
-
-}
-
-});
-
-},
-
-{
-threshold:.2
-}
-
-);
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
 
 
-sections.forEach(section=>{
-
-observer.observe(section);
-
-});
-
-
-/* =========================
-CUENTA REGRESIVA
-========================= */
-
-const partyDate=
-new Date(
-"September 26, 2026 19:30:00"
-).getTime();
+    const hours =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
 
 
-function updateCountdown(){
-
-const now=
-new Date().getTime();
-
-const distance=
-partyDate-now;
-
-if(distance<=0){
-
-return;
-
-}
+    const minutes =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
 
 
-const days=
-Math.floor(
-distance/
-(1000*60*60*24)
-);
-
-const hours=
-Math.floor(
-(distance%
-(1000*60*60*24))
-/
-(1000*60*60)
-);
-
-const minutes=
-Math.floor(
-(distance%
-(1000*60*60))
-/
-(1000*60)
-);
-
-const seconds=
-Math.floor(
-(distance%
-(1000*60))
-/
-1000
-);
+    const seconds =
+        Math.floor(
+            (difference %
+            (1000 * 60))
+            /
+            1000
+        );
 
 
-document
-.getElementById("days")
-.innerHTML=days;
+    document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
 
-document
-.getElementById("hours")
-.innerHTML=hours;
 
-document
-.getElementById("minutes")
-.innerHTML=minutes;
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
 
-document
-.getElementById("seconds")
-.innerHTML=seconds;
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
 
 }
 
@@ -859,21 +1100,181 @@ document
 updateCountdown();
 
 setInterval(
-updateCountdown,
-1000
+    updateCountdown,
+    1000
 );
+
 
 
 /* =========================
-CONFETI AL ENTRAR
+   ANIMACIONES SCROLL
 ========================= */
 
-setTimeout(
-explodeConfetti,
-4800
+const fadeElements =
+    document.querySelectorAll(".fade");
+
+
+const observer =
+    new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(
+                function(entry) {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                        .classList
+                        .add("show");
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: 0.1
+        }
+
+    );
+
+
+fadeElements.forEach(
+    function(element) {
+
+        observer.observe(element);
+
+    }
 );
 
+
+/* Mostrar portada inmediatamente */
+
+setTimeout(
+    function() {
+
+        const first =
+            document.querySelector(".fade");
+
+        if (first) {
+
+            first.classList
+            .add("show");
+
+        }
+
+    },
+    200
+);
+
+
+
+/* =========================
+   DATOS BANCARIOS
+========================= */
+
+function toggleGift() {
+
+    const content =
+        document.getElementById(
+            "giftContent"
+        );
+
+    content.classList.toggle(
+        "open"
+    );
+
+}
+
+
+
+/* =========================
+   COPIAR TARJETA
+========================= */
+
+function copyCard() {
+
+    const number =
+        "4152313720141337";
+
+
+    navigator.clipboard
+    .writeText(number)
+    .then(
+
+        function() {
+
+            alert(
+                "✅ Número de tarjeta copiado"
+            );
+
+        }
+
+    )
+    .catch(
+
+        function() {
+
+            alert(
+                "Número de tarjeta: " +
+                number
+            );
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+document
+.getElementById("whatsappButton")
+.addEventListener(
+
+    "click",
+
+    function(event) {
+
+        event.preventDefault();
+
+
+        const phone =
+            "529932424071";
+
+
+        const message =
+            "¡Hola Tincho! 🎉🥳 Confirmo mi asistencia a tu fiesta de 44 años. ¡Nos vemos para celebrar contigo! ✨";
+
+
+        const url =
+            "https://wa.me/" +
+            phone +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+    }
+
+);
+
+
 </script>
+
 
 </body>
 </html>
