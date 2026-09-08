@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tincho Zurita | 44 Años</title>
+<title>🎉 Tincho Zurita | 44 Años</title>
 
 <style>
-
-/* =========================
-   CONFIGURACIÓN GENERAL
-========================= */
 
 * {
     margin: 0;
@@ -21,606 +15,224 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    background: #080808;
-    color: #ffffff;
+    background: #08090b;
+    color: white;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
     overflow-x: hidden;
 }
 
-
-/* =========================
-   FONDO ANIMADO
-========================= */
-
-.glow {
-    position: fixed;
-    width: 500px;
-    height: 500px;
-
-    background: radial-gradient(
-        circle,
-        rgba(210, 170, 50, 0.25),
-        rgba(210, 170, 50, 0.08),
-        transparent 70%
-    );
-
-    border-radius: 50%;
-
-    top: 20%;
-    left: -200px;
-
-    z-index: 0;
-
-    animation: moverGlow 10s infinite alternate ease-in-out;
-
-    pointer-events: none;
-}
-
-@keyframes moverGlow {
-
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(400px, 250px);
-    }
-
-}
-
-
-/* =========================
-   CONTENIDO PRINCIPAL
-========================= */
-
-.container {
-
-    position: relative;
-
-    z-index: 2;
-
-    max-width: 650px;
-
-    margin: auto;
-
-}
-
-
-/* =========================
-   SECCIONES
-========================= */
-
-section {
-
-    padding: 60px 25px;
-
-    text-align: center;
-
-}
-
-
-/* =========================
-   PORTADA
-========================= */
-
-.portada {
-
+.contenedor {
     min-height: 100vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
-
+    padding: 45px 25px;
+    background:
+        radial-gradient(circle at center, rgba(210,160,40,0.18), transparent 45%),
+        #08090b;
 }
 
+.invitacion {
+    max-width: 650px;
+    margin: auto;
+}
 
-.frase-principal {
-
-    color: #d8cba7;
-
-    font-size: 18px;
-
-    letter-spacing: 4px;
-
-    line-height: 1.8;
-
+.texto-superior {
+    color: #e8d8a5;
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 1.7;
     margin-bottom: 35px;
-
-    animation: aparecer 2s ease;
-
 }
-
 
 .nombre {
-
-    font-size: 70px;
-
+    font-size: clamp(55px, 14vw, 100px);
     font-weight: bold;
-
-    color: #e0b83e;
-
+    color: #e4b93f;
+    text-shadow: 0 0 20px rgba(228,185,63,0.4);
     line-height: 0.9;
-
-    text-shadow:
-
-        0 0 10px #e0b83e,
-
-        0 0 30px rgba(224,184,62,0.6);
-
-    animation: zoom 2s ease;
-
 }
-
 
 .cumple {
-
-    font-size: 22px;
-
-    letter-spacing: 10px;
-
+    margin-top: 25px;
+    font-size: 25px;
+    letter-spacing: 12px;
     color: #dddddd;
-
-    margin-top: 35px;
-
 }
-
 
 .numero {
-
-    font-size: 160px;
-
+    font-size: clamp(130px, 30vw, 230px);
     font-weight: bold;
-
-    color: #e0b83e;
-
-    line-height: 1;
-
-    text-shadow:
-
-        0 0 15px #e0b83e,
-
-        0 0 40px #b88919,
-
-        0 0 70px rgba(224,184,62,0.6);
-
-    animation: brillo 2s infinite alternate;
-
+    color: #e4b93f;
+    text-shadow: 0 0 30px rgba(228,185,63,0.3);
+    line-height: 0.9;
+    margin-top: 15px;
 }
-
 
 .anos {
-
     font-size: 48px;
-
-    font-style: italic;
-
-    color: #e0b83e;
-
+    color: #e4b93f;
+    margin-top: 15px;
 }
-
 
 .linea {
-
-    width: 200px;
-
+    width: 60%;
     height: 2px;
-
-    background: #e0b83e;
-
-    margin: 40px auto;
-
+    background: #e4b93f;
+    margin: 45px auto;
 }
 
-
-.mensaje {
-
+.frase {
     font-size: 25px;
-
-    line-height: 1.5;
-
-    color: #eeeeee;
-
+    line-height: 1.6;
+    margin-bottom: 45px;
 }
 
-
-.mensaje strong {
-
-    color: #e0b83e;
-
+.frase strong {
+    color: #e4b93f;
 }
 
-
-/* =========================
-   TITULOS
-========================= */
-
-.titulo {
-
-    color: #e0b83e;
-
-    font-size: 30px;
-
-    margin-bottom: 30px;
-
+.fiesta {
+    color: #e4b93f;
+    font-size: 22px;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
 }
-
-
-/* =========================
-   TARJETAS
-========================= */
-
-.card {
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(35,35,35,0.95),
-            rgba(12,12,12,0.95)
-        );
-
-    border:
-
-        1px solid rgba(224,184,62,0.45);
-
-    border-radius: 25px;
-
-    padding: 35px 25px;
-
-    margin: 20px 0;
-
-    box-shadow:
-
-        0 0 30px rgba(224,184,62,0.10);
-
-}
-
 
 .info {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(228,185,63,0.5);
+    border-radius: 20px;
+    padding: 30px 20px;
+    margin: 20px 0;
+}
 
+.info h2 {
+    color: #e4b93f;
+    margin-bottom: 12px;
+    font-size: 25px;
+}
+
+.info p {
     font-size: 21px;
+    line-height: 1.6;
+}
 
+.vestimenta {
+    margin-top: 45px;
+}
+
+.vestimenta h2 {
+    color: #e4b93f;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.vestimenta p {
+    font-size: 20px;
     line-height: 1.8;
-
-    color: #eeeeee;
-
 }
-
-
-.info strong {
-
-    color: #e0b83e;
-
-}
-
-
-/* =========================
-   CUENTA REGRESIVA
-========================= */
-
-.countdown {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-
-}
-
-
-.time {
-
-    width: 75px;
-
-    background: #111111;
-
-    border:
-
-        1px solid #d8b64c;
-
-    border-radius: 15px;
-
-    padding: 15px 8px;
-
-}
-
-
-.time span {
-
-    display: block;
-
-    font-size: 28px;
-
-    font-weight: bold;
-
-    color: #e0b83e;
-
-}
-
-
-.time small {
-
-    color: #aaaaaa;
-
-    font-size: 10px;
-
-}
-
-
-/* =========================
-   BOTON WHATSAPP
-========================= */
-
-.boton {
-
-    display: inline-block;
-
-    margin-top: 30px;
-
-    padding: 18px 28px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #e0b83e,
-            #b88919
-        );
-
-    color: #111111;
-
-    text-decoration: none;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    border-radius: 50px;
-
-    box-shadow:
-
-        0 0 25px rgba(224,184,62,0.45);
-
-    transition: 0.3s;
-
-}
-
-
-.boton:active {
-
-    transform: scale(0.95);
-
-}
-
-
-/* =========================
-   MUSICA
-========================= */
-
-.music-button {
-
-    position: fixed;
-
-    bottom: 20px;
-
-    right: 20px;
-
-    width: 65px;
-
-    height: 65px;
-
-    border-radius: 50%;
-
-    border: none;
-
-    background: #e0b83e;
-
-    color: #111111;
-
-    font-size: 28px;
-
-    z-index: 20;
-
-    box-shadow:
-
-        0 0 25px rgba(224,184,62,0.7);
-
-}
-
-
-/* =========================
-   CONFETI
-========================= */
-
-.confetti {
-
-    position: fixed;
-
-    width: 10px;
-
-    height: 10px;
-
-    top: -20px;
-
-    z-index: 5;
-
-    pointer-events: none;
-
-    animation:
-
-        caer linear infinite;
-
-}
-
-
-@keyframes caer {
-
-    to {
-
-        transform:
-
-            translateY(110vh)
-            rotate(720deg);
-
-    }
-
-}
-
-
-/* =========================
-   ANIMACIONES
-========================= */
-
-@keyframes aparecer {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-
-            translateY(30px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-
-            translateY(0);
-
-    }
-
-}
-
-
-@keyframes zoom {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-
-            scale(0.5);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-
-            scale(1);
-
-    }
-
-}
-
-
-@keyframes brillo {
-
-    from {
-
-        text-shadow:
-
-            0 0 10px #e0b83e;
-
-    }
-
-    to {
-
-        text-shadow:
-
-            0 0 25px #e0b83e,
-
-            0 0 60px #e0b83e,
-
-            0 0 90px rgba(224,184,62,0.7);
-
-    }
-
-}
-
-
-/* =========================
-   PIE
-========================= */
 
 .final {
-
-    color: #d8cba7;
-
-    font-size: 18px;
-
-    letter-spacing: 3px;
-
-    line-height: 1.8;
-
+    margin-top: 55px;
+    font-size: 22px;
+    color: #e4b93f;
+    line-height: 1.7;
 }
 
-
-/* =========================
-   CELULARES
-========================= */
-
-@media (max-width: 480px) {
-
-    .nombre {
-
-        font-size: 58px;
-
-    }
-
-    .numero {
-
-        font-size: 135px;
-
-    }
-
-    .frase-principal {
-
-        font-size: 16px;
-
-        letter-spacing: 3px;
-
-    }
-
-    .mensaje {
-
-        font-size: 22px;
-
-    }
-
-    .titulo {
-
-        font-size: 26px;
-
-    }
-
-    .info {
-
-        font-size: 19px;
-
-    }
-
+.boton {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 18px 30px;
+    background: #e4b93f;
+    color: #111;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 </style>
-
 </head>
+
+<body>
+
+<div class="contenedor">
+
+<div class="invitacion">
+
+<div class="texto-superior">
+HAY HISTORIAS QUE MERECEN CELEBRARSE...<br>
+Y ESTA ES UNA DE ELLAS.
+</div>
+
+<div class="nombre">
+TINCHO<br>
+ZURITA
+</div>
+
+<div class="cumple">
+CUMPLE
+</div>
+
+<div class="numero">
+44
+</div>
+
+<div class="anos">
+AÑOS
+</div>
+
+<div class="linea"></div>
+
+<div class="frase">
+Porque <strong>44 no se cumplen todos los días</strong>,<br>
+esto hay que celebrarlo como se debe.
+</div>
+
+<div class="fiesta">
+⌛ LA FIESTA COMIENZA EN...
+</div>
+
+<div class="info">
+<h2>📅 VIERNES 26 DE SEPTIEMBRE</h2>
+<p>🕢 7:30 PM</p>
+</div>
+
+<div class="info">
+<h2>📍 PALAPA LA CARRETA</h2>
+<p>Fraccionamiento Jalapa</p>
+</div>
+
+<div class="vestimenta">
+
+<h2>👔 CÓDIGO DE VESTIMENTA</h2>
+
+<p>
+<strong>HOMBRES</strong><br>
+Guayabera + pantalón negro o caqui
+</p>
+
+<br>
+
+<p>
+<strong>MUJERES</strong><br>
+Vestido casual de noche
+</p>
+
+</div>
+
+<div class="final">
+✨ Ven cómodo, listo para divertirte<br>
+y celebrar conmigo esta nueva vuelta al sol. ✨
+</div>
+
+<a class="boton" href="https://wa.me/529932424071">
+CONFIRMAR ASISTENCIA
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
