@@ -285,4 +285,362 @@ section{
 
 /* RESPONSIVE */
 
-@
+@media(max-width:450px){
+
+.nombre{
+    font-size:52px;
+}
+
+.numero{
+    font-size:120px;
+}
+
+.frase{
+    font-size:16px;
+    letter-spacing:3px;
+}
+
+.mensaje{
+    font-size:22px;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+<section class="intro">
+
+<div class="frase">
+HAY HISTORIAS QUE MERECEN CELEBRARSE...<br>
+Y ESTA ES UNA DE ELLAS.
+</div>
+
+<div class="nombre">
+TINCHO<br>ZURITA
+</div>
+
+<div class="cumple">
+CUMPLE
+</div>
+
+<div class="numero">
+44
+</div>
+
+<div class="anos">
+Años
+</div>
+
+<div class="linea"></div>
+
+<div class="mensaje">
+Porque <strong>44 no se cumplen todos los días</strong>,<br>
+esto hay que celebrarlo como se debe.
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="titulo">
+⏳ LA FIESTA COMIENZA EN
+</h2>
+
+<div class="countdown">
+
+<div class="time">
+<span id="dias">00</span>
+<small>DÍAS</small>
+</div>
+
+<div class="time">
+<span id="horas">00</span>
+<small>HORAS</small>
+</div>
+
+<div class="time">
+<span id="minutos">00</span>
+<small>MIN</small>
+</div>
+
+<div class="time">
+<span id="segundos">00</span>
+<small>SEG</small>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="card">
+
+<h2 class="titulo">
+🎉 LA FIESTA
+</h2>
+
+<div class="info">
+
+<strong>📅 Día</strong><br>
+26 de septiembre
+
+<br><br>
+
+<strong>🕢 Hora</strong><br>
+7:30 PM
+
+<br><br>
+
+<strong>📍 Lugar</strong><br>
+Palapa La Carreta
+
+<br><br>
+
+Fraccionamiento Jalapa
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="card">
+
+<h2 class="titulo">
+👔 CÓDIGO DE VESTIMENTA
+</h2>
+
+<div class="info">
+
+<strong>HOMBRES</strong>
+
+<br>
+
+Guayabera en tonos
+<strong>negro o caqui</strong>
+
+<br>
+
+Pantalón negro o caqui
+
+<br><br>
+
+<strong>MUJERES</strong>
+
+<br>
+
+Vestido casual de noche
+
+<br>
+
+En tonos
+<strong>negro, dorado o caqui</strong>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="card">
+
+<h2 class="titulo">
+🥂 LO ÚNICO QUE NECESITAS...
+</h2>
+
+<div class="info">
+
+Ven cómodo,<br>
+listo para divertirte<br>
+y celebrar. 🎉🔥
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="titulo">
+📲 CONFIRMA TU ASISTENCIA
+</h2>
+
+<div class="info">
+
+¿Listo para celebrar conmigo?
+
+</div>
+
+<a class="boton"
+href="https://wa.me/5219932424071?text=¡Hola%20Tincho!%20Confirmo%20que%20estaré%20en%20tu%20fiesta%20de%2044%20años!%20🎉🥳">
+
+CONFIRMAR POR WHATSAPP 💬
+
+</a>
+
+</section>
+
+
+<section>
+
+<div class="frase">
+
+¡NOS VEMOS EN LA FIESTA! 🥳
+
+<br><br>
+
+TINCHO ZURITA<br>
+
+<strong style="color:#e0b83e;font-size:24px;">
+44 AÑOS
+</strong>
+
+</div>
+
+</section>
+
+</div>
+
+
+<div class="music">
+
+<button onclick="toggleMusic()">
+🎵
+</button>
+
+</div>
+
+
+<!-- MUSICA -->
+
+<div id="player" style="display:none;">
+
+<iframe
+id="youtube"
+width="0"
+height="0"
+src="https://www.youtube.com/embed/UtF6Jej8yb4?enablejsapi=1"
+allow="autoplay">
+</iframe>
+
+</div>
+
+
+<script>
+
+/* CUENTA REGRESIVA */
+
+const fechaFiesta =
+new Date("September 26, 2026 19:30:00").getTime();
+
+
+setInterval(function(){
+
+const ahora = new Date().getTime();
+
+const distancia = fechaFiesta - ahora;
+
+const dias =
+Math.floor(distancia / (1000 * 60 * 60 * 24));
+
+const horas =
+Math.floor(
+(distancia % (1000 * 60 * 60 * 24))
+/
+(1000 * 60 * 60)
+);
+
+const minutos =
+Math.floor(
+(distancia % (1000 * 60 * 60))
+/
+(1000 * 60)
+);
+
+const segundos =
+Math.floor(
+(distancia % (1000 * 60))
+/
+1000
+);
+
+document.getElementById("dias").innerHTML = dias;
+document.getElementById("horas").innerHTML = horas;
+document.getElementById("minutos").innerHTML = minutos;
+document.getElementById("segundos").innerHTML = segundos;
+
+},1000);
+
+
+/* MUSICA */
+
+let musicPlaying = false;
+
+function toggleMusic(){
+
+const iframe =
+document.getElementById("youtube");
+
+if(!musicPlaying){
+
+iframe.src =
+"https://www.youtube.com/embed/UtF6Jej8yb4?autoplay=1";
+
+musicPlaying = true;
+
+}else{
+
+iframe.src =
+"https://www.youtube.com/embed/UtF6Jej8yb4";
+
+musicPlaying = false;
+
+}
+
+}
+
+
+/* CONFETI */
+
+for(let i=0;i<35;i++){
+
+let confetti =
+document.createElement("div");
+
+confetti.className =
+"confetti";
+
+confetti.style.left =
+Math.random()*100+"vw";
+
+confetti.style.animationDuration =
+(Math.random()*4+4)+"s";
+
+confetti.style.animationDelay =
+Math.random()*5+"s";
+
+document.body.appendChild(confetti);
+
+}
+
+</script>
+
+</body>
+</html>
