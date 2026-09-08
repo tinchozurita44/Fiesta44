@@ -1,300 +1,288 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Tincho Zurita | 44 Años</title>
+<title>🎉 Tincho Zurita | 44 Años</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#080808;
+    color:white;
+    overflow-x:hidden;
+}
+
+.container{
+    max-width:600px;
+    margin:auto;
+    min-height:100vh;
+    text-align:center;
+    position:relative;
+}
+
+/* FONDO ANIMADO */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(218,174,45,.18), transparent 70%);
+    top:-150px;
+    left:-150px;
+    animation:mover 8s infinite alternate;
+}
+
+@keyframes mover{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(200px,300px);
+    }
+}
+
+/* SECCIONES */
+
+section{
+    padding:55px 25px;
+    position:relative;
+    z-index:2;
+}
+
+/* INTRO */
+
+.intro{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.frase{
+    color:#d8cba7;
+    font-size:20px;
+    letter-spacing:5px;
+    line-height:1.7;
+    margin-bottom:35px;
+    animation:aparecer 2s ease;
+}
+
+.nombre{
+    font-size:65px;
+    font-weight:bold;
+    color:#e0b83e;
+    text-shadow:
+    0 0 10px #e0b83e,
+    0 0 30px rgba(224,184,62,.6);
+    animation:zoom 2s ease;
+}
+
+.cumple{
+    font-size:26px;
+    letter-spacing:12px;
+    margin-top:30px;
+    color:#ddd;
+}
+
+.numero{
+    font-size:150px;
+    font-weight:bold;
+    color:#e0b83e;
+    line-height:1;
+    text-shadow:
+    0 0 15px #e0b83e,
+    0 0 45px rgba(224,184,62,.7);
+    animation:brillo 2s infinite alternate;
+}
+
+.anos{
+    font-size:50px;
+    color:#e0b83e;
+    font-style:italic;
+}
+
+.linea{
+    width:180px;
+    height:3px;
+    background:#d8b64c;
+    margin:45px auto;
+}
+
+.mensaje{
+    font-size:26px;
+    line-height:1.5;
+    color:#eee;
+}
+
+.mensaje strong{
+    color:#e0b83e;
+}
+
+/* TARJETAS */
+
+.card{
+    background:linear-gradient(
+        145deg,
+        #181818,
+        #0c0c0c
+    );
+    border:1px solid #3d3214;
+    border-radius:25px;
+    padding:30px;
+    margin:25px 0;
+    box-shadow:0 0 30px rgba(224,184,62,.08);
+}
+
+.titulo{
+    font-size:32px;
+    color:#e0b83e;
+    margin-bottom:30px;
+}
+
+.info{
+    font-size:22px;
+    line-height:1.8;
+}
+
+.info strong{
+    color:#e0b83e;
+}
+
+/* CUENTA REGRESIVA */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-top:25px;
+}
+
+.time{
+    background:#111;
+    border:1px solid #d4ad43;
+    border-radius:15px;
+    padding:15px 10px;
+    min-width:70px;
+}
+
+.time span{
+    display:block;
+    font-size:28px;
+    font-weight:bold;
+    color:#e0b83e;
+}
+
+.time small{
+    color:#aaa;
+}
+
+/* BOTON */
+
+.boton{
+    display:inline-block;
+    margin-top:25px;
+    padding:18px 28px;
+    background:#d9b23d;
+    color:#111;
+    text-decoration:none;
+    border-radius:50px;
+    font-size:20px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(224,184,62,.4);
+}
+
+.boton:hover{
+    transform:scale(1.08);
+}
+
+/* MUSICA */
+
+.music{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:10;
+}
+
+.music button{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:none;
+    background:#d9b23d;
+    font-size:25px;
+    box-shadow:0 0 20px rgba(224,184,62,.7);
+}
+
+/* CONFETI */
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    background:#e0b83e;
+    top:-20px;
+    animation:caer linear infinite;
+    z-index:1;
+}
+
+@keyframes caer{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+/* ANIMACIONES */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(30px);
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #050505;
-      color: white;
-      text-align: center;
-      overflow-x: hidden;
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes zoom{
+    from{
+        opacity:0;
+        transform:scale(.5);
     }
 
-    .container {
-      min-height: 100vh;
-      padding: 45px 20px;
-      background:
-        radial-gradient(circle at top, #242424 0%, #050505 55%);
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes brillo{
+    from{
+        text-shadow:
+        0 0 10px #e0b83e;
     }
 
-    .gold {
-      color: #d4af37;
+    to{
+        text-shadow:
+        0 0 20px #e0b83e,
+        0 0 60px #e0b83e;
     }
+}
 
-    .top-text {
-      color: #e7d6a0;
-      font-size: 17px;
-      letter-spacing: 2px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
+/* RESPONSIVE */
 
-    .name {
-      font-size: 52px;
-      font-weight: bold;
-      line-height: 0.9;
-      letter-spacing: 2px;
-      color: #d4af37;
-      text-shadow: 0 0 15px rgba(212,175,55,.35);
-      animation: fadeDown 1.2s ease;
-    }
-
-    .years-text {
-      margin-top: 25px;
-      font-size: 18px;
-      letter-spacing: 8px;
-      color: #ddd;
-    }
-
-    .number {
-      font-size: 150px;
-      font-weight: bold;
-      color: #d4af37;
-      line-height: 1;
-      text-shadow:
-        0 0 20px rgba(212,175,55,.4),
-        0 0 40px rgba(212,175,55,.15);
-      animation: zoom 1.5s ease;
-    }
-
-    .anos {
-      font-size: 55px;
-      color: #d4af37;
-      font-style: italic;
-      margin-top: -15px;
-    }
-
-    .phrase {
-      margin: 35px auto;
-      max-width: 600px;
-      font-size: 20px;
-      line-height: 1.6;
-      color: #eee;
-    }
-
-    .phrase strong {
-      color: #d4af37;
-    }
-
-    .divider {
-      width: 150px;
-      height: 2px;
-      background: #d4af37;
-      margin: 30px auto;
-    }
-
-    .countdown-title {
-      color: #d4af37;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-      font-size: 15px;
-    }
-
-    .countdown {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 45px;
-      flex-wrap: wrap;
-    }
-
-    .time-box {
-      border: 1px solid #d4af37;
-      border-radius: 10px;
-      padding: 15px 10px;
-      min-width: 75px;
-      background: rgba(212,175,55,.06);
-    }
-
-    .time-box span {
-      display: block;
-      font-size: 30px;
-      color: #d4af37;
-      font-weight: bold;
-    }
-
-    .time-box small {
-      color: #ccc;
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-
-    .details {
-      max-width: 600px;
-      margin: auto;
-      padding: 30px 20px;
-      border: 1px solid rgba(212,175,55,.5);
-      border-radius: 20px;
-      background: rgba(255,255,255,.03);
-    }
-
-    .detail {
-      margin: 25px 0;
-    }
-
-    .detail-icon {
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    .detail-title {
-      color: #d4af37;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
-
-    .detail-text {
-      font-size: 20px;
-      margin-top: 5px;
-    }
-
-    .info {
-      margin-top: 40px;
-      padding: 25px;
-      border-top: 1px solid #d4af37;
-      border-bottom: 1px solid #d4af37;
-    }
-
-    .info h3 {
-      color: #d4af37;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-
-    .info p {
-      line-height: 1.6;
-      color: #eee;
-    }
-
-    .whatsapp {
-      display: block;
-      max-width: 500px;
-      margin: 40px auto 20px;
-      padding: 20px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 50px;
-      font-size: 20px;
-      font-weight: bold;
-      box-shadow: 0 0 25px rgba(37,211,102,.35);
-      transition: .3s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.04);
-      box-shadow: 0 0 40px rgba(37,211,102,.6);
-    }
-
-    .footer {
-      margin-top: 50px;
-      color: #d4af37;
-      font-size: 25px;
-      font-style: italic;
-    }
-
-    .footer-small {
-      margin-top: 25px;
-      color: #999;
-      font-size: 12px;
-      letter-spacing: 3px;
-    }
-
-    @keyframes zoom {
-      from {
-        opacity: 0;
-        transform: scale(.5);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-
-    @keyframes fadeDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 500px) {
-
-      .container {
-        padding: 40px 15px;
-      }
-
-      .name {
-        font-size: 42px;
-      }
-
-      .number {
-        font-size: 125px;
-      }
-
-      .anos {
-        font-size: 45px;
-      }
-
-      .phrase {
-        font-size: 18px;
-      }
-
-    }
-
-  </style>
-</head>
-
-<body>
-
-<div class="container">
-
-  <div class="top-text">
-    HAY HISTORIAS QUE MERECEN CELEBRARSE...<br>
-    Y ESTA ES UNA DE ELLAS.
-  </div>
-
-  <h1 class="name">
-    TINCHO<br>
-    ZURITA
-  </h1>
-
-  <div class="years-text">
-    CUMPLE
-  </div>
-
-  <div class="number">
-    44
-  </div>
-
-  <div class="anos">
-    Años
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="phrase">
-    Porque <strong>44 no se cumplen todos los días</strong>,
-    esto hay que celebrarlo como se debe.
-  </div>
-
-  <div class="countdown-title">
-    ⏳ LA FIESTA COMIENZA EN
-  </div>
-
-  <
+@
