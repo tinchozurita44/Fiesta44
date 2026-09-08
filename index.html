@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: #08090b;
     color: white;
@@ -22,51 +26,105 @@ body {
     overflow-x: hidden;
 }
 
-.container {
-    min-height: 100vh;
-    padding: 50px 25px;
-    background:
-        radial-gradient(circle at 50% 30%, rgba(212,175,55,0.22), transparent 35%),
-        radial-gradient(circle at 80% 70%, rgba(212,175,55,0.12), transparent 30%),
-        #08090b;
+/* FONDO ANIMADO */
+
+#particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
 }
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #e6bd3d;
+    border-radius: 50%;
+    opacity: 0;
+    box-shadow: 0 0 10px #e6bd3d;
+    animation: floatParticle linear infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(110vh) translateX(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .8;
+    }
+
+    80% {
+        opacity: .5;
+    }
+
+    100% {
+        transform: translateY(-10vh) translateX(100px);
+        opacity: 0;
+    }
+}
+
+
+/* CONTENEDOR */
+
+.container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 55px 25px 70px;
+    background:
+        radial-gradient(circle at 50% 20%, rgba(212,175,55,0.18), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(212,175,55,0.12), transparent 30%);
+}
+
+
+/* ENCABEZADO */
 
 .top-text {
     color: #e6d3a3;
-    font-size: 20px;
-    letter-spacing: 6px;
+    font-size: 19px;
+    letter-spacing: 5px;
     line-height: 1.8;
-    margin-bottom: 35px;
-    animation: fadeIn 2s ease;
+    margin-bottom: 40px;
+    animation: fadeDown 1.5s ease;
 }
 
+
+/* NOMBRE */
+
 .name {
-    font-size: 55px;
+    font-size: 58px;
     font-weight: bold;
     color: #e6bd3d;
     letter-spacing: 3px;
     text-shadow:
-        0 0 10px rgba(230,189,61,0.5),
-        0 0 30px rgba(230,189,61,0.3);
+        0 0 10px rgba(230,189,61,.6),
+        0 0 35px rgba(230,189,61,.35);
     animation: glow 2s infinite alternate;
 }
 
 .turns {
-    margin-top: 25px;
+    margin-top: 28px;
     color: #dddddd;
     font-size: 20px;
     letter-spacing: 10px;
 }
 
+
+/* EDAD */
+
 .age {
-    font-size: 150px;
+    font-size: 155px;
     font-weight: bold;
     color: #e6bd3d;
     line-height: 1;
     margin-top: 25px;
     text-shadow:
-        0 0 20px rgba(230,189,61,0.5),
-        0 0 50px rgba(230,189,61,0.25);
+        0 0 20px rgba(230,189,61,.6),
+        0 0 55px rgba(230,189,61,.25);
     animation: zoomIn 1.5s ease;
 }
 
@@ -77,13 +135,19 @@ body {
     font-style: italic;
 }
 
+
+/* LINEA */
+
 .line {
-    width: 150px;
+    width: 170px;
     height: 3px;
     background: #e6bd3d;
     margin: 50px auto;
-    box-shadow: 0 0 15px rgba(230,189,61,0.6);
+    box-shadow: 0 0 20px #e6bd3d;
 }
+
+
+/* MENSAJE */
 
 .message {
     font-size: 24px;
@@ -97,210 +161,41 @@ body {
     color: #e6bd3d;
 }
 
+
+/* SECCIONES */
+
 .section {
-    margin-top: 65px;
-    padding: 30px 20px;
-    border-top: 1px solid rgba(230,189,61,0.25);
-    border-bottom: 1px solid rgba(230,189,61,0.25);
+    margin-top: 70px;
+    padding: 45px 10px;
+    border-top: 1px solid rgba(230,189,61,.25);
+    border-bottom: 1px solid rgba(230,189,61,.25);
 }
 
 .section-title {
     color: #e6bd3d;
-    font-size: 18px;
-    letter-spacing: 6px;
+    font-size: 17px;
+    letter-spacing: 5px;
     margin-bottom: 30px;
 }
 
-.info-box {
-    margin: 25px auto;
-    max-width: 500px;
-    padding: 22px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(230,189,61,0.35);
-    border-radius: 18px;
-    box-shadow: 0 0 20px rgba(230,189,61,0.08);
-}
 
-.info-icon {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
+/* TARJETAS */
 
-.info-title {
-    color: #e6bd3d;
-    font-size: 14px;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-}
-
-.info-text {
-    font-size: 21px;
-    line-height: 1.5;
-}
-
-.dress-code {
-    margin-top: 65px;
-}
-
-.dress-title {
-    color: #e6bd3d;
-    font-size: 22px;
-    letter-spacing: 4px;
-    margin-bottom: 35px;
-}
-
+.info-box,
 .dress-box {
-    max-width: 500px;
-    margin: 20px auto;
+    margin: 22px auto;
+    max-width: 520px;
     padding: 25px;
-    border-radius: 18px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(230,189,61,0.3);
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(230,189,61,.35);
+    border-radius: 20px;
+    box-shadow:
+        0 0 25px rgba(230,189,61,.08);
+    transition: .4s;
 }
 
-.dress-box h3 {
-    color: #e6bd3d;
-    margin-bottom: 15px;
-    font-size: 20px;
-    letter-spacing: 2px;
-}
-
-.dress-box p {
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-.final-message {
-    margin: 65px auto 35px;
-    font-size: 25px;
-    line-height: 1.7;
-    max-width: 600px;
-    color: #ffffff;
-}
-
-.button {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 18px 28px;
-    background: #e6bd3d;
-    color: #08090b;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
-    border-radius: 50px;
-    letter-spacing: 2px;
-    box-shadow: 0 0 25px rgba(230,189,61,0.45);
-    transition: 0.3s;
-}
-
-.button:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 40px rgba(230,189,61,0.7);
-}
-
-.footer {
-    margin-top: 70px;
-    color: #b9b9b9;
-    font-size: 14px;
-    letter-spacing: 3px;
-}
-
-.music-note {
-    margin-top: 35px;
-    font-size: 30px;
-    animation: float 2s infinite ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes glow {
-    from {
-        text-shadow:
-            0 0 10px rgba(230,189,61,0.4),
-            0 0 20px rgba(230,189,61,0.2);
-    }
-
-    to {
-        text-shadow:
-            0 0 20px rgba(230,189,61,0.8),
-            0 0 45px rgba(230,189,61,0.5);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 600px) {
-
-    .container {
-        padding: 45px 20px;
-    }
-
-    .top-text {
-        font-size: 16px;
-        letter-spacing: 4px;
-    }
-
-    .name {
-        font-size: 45px;
-    }
-
-    .age {
-        font-size: 120px;
-    }
-
-    .years {
-        font-size: 40px;
-    }
-
-    .message {
-        font-size: 21px;
-    }
-
-    .final-message {
-        font-size: 22px;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-    <div class="top-text">
-        HAY HISTORIAS QUE MERECEN CELEBRARSE...
+.info-box:hover,
+.dress-box:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 30px rgba(230,
